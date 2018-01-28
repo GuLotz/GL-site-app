@@ -1,3 +1,4 @@
+<!--
 <div class="collapse navbar-collapse" id="mynavbar">
   <ul class="nav navbar-nav">
     <li>
@@ -14,7 +15,16 @@
     </li>
   </ul>
 </div>
+-->
 
+
+<div class="collapse navbar-collapse" id="mynavbar" >
+  <ul class="nav navbar-nav" >
+    <li *ngFor = "let route of appRoutes; let i = index">
+        <a routerLink='/{{route.path}}' class="link">{{route.data["1"].tabTitle}}</a>
+    </li>
+  </ul>
+</div>
 <div class="content">
   <router-outlet></router-outlet>
 </div>
