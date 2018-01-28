@@ -1,0 +1,18 @@
+
+<h1>Gunnar's Music</h1>
+
+<table>
+  <tbody>
+    <tr *ngFor="let song of songs">
+      <td> {{song.id}} </td>
+      <td>
+        <!-- <a href="{{song.url}}">{{song.title}}</a>  -->
+        <form>
+        <!--<input type="button" (click)="playmp3({{song.title}})">-->
+        </form>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<mp3player></mp3player>

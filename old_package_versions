@@ -1,0 +1,35 @@
+#before update on 2018-01-27
+
+"dependencies": {
+  "@angular/common": "^2.4.10",
+  "@angular/compiler": "^2.4.10",
+  "@angular/core": "^2.4.10",
+  "@angular/forms": "^2.4.10",
+  "@angular/http": "^2.4.10",
+  "@angular/platform-browser": "^2.4.10",
+  "@angular/platform-browser-dynamic": "^2.4.10",
+  "@angular/router": "^3.4.10",
+  "core-js": "^2.5.3",
+  "rxjs": "^5.5.6",
+  "zone.js": "^0.7.8"
+},
+"devDependencies": {
+  "@angular/cli": "1.0.0-rc.0",
+  "@angular/compiler-cli": "^2.4.10",
+  "@types/jasmine": "2.5.38",
+  "@types/node": "^6.0.96",
+  "codelyzer": "~2.0.0",
+  "jasmine-core": "~2.5.2",
+  "jasmine-spec-reporter": "~3.2.0",
+  "karma": "~1.4.1",
+  "karma-chrome-launcher": "~2.0.0",
+  "karma-cli": "~1.0.1",
+  "karma-coverage-istanbul-reporter": "^0.2.0",
+  "karma-jasmine": "^1.1.1",
+  "karma-jasmine-html-reporter": "^0.2.2",
+  "protractor": "^5.1.2",
+  "ts-node": "~2.0.0",
+  "tslint": "~4.4.2",
+  "typescript": "2.4.2",
+  "webpack-system-register": "^1.5.1"
+}
