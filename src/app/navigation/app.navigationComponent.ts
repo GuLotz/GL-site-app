@@ -5,14 +5,23 @@ import { appRoutes } from '../routing/app.routing';
   selector: 'navigation',
   templateUrl: 'navigation.html'
 })
+
 export class navigationComponent {
-  appRoutes: object;
+  NavigationRoutes: Navigation[];
   constructor(){
-    this.appRoutes = appRoutes;
-    // this is dirty. I know here, that I do not want to show path'' and path'**' and I know their position
-    // throws an error, as appRoutes is not an array, but an object
-    // Works anyway in the transpiled JS
-    this.appRoutes.splice(0,1);
-    this.appRoutes.splice(this.appRoutes.length-1,1)
+    //let NavigationRoutes: Navigation[]=[];
+    let route;
+    this.NavigationRoutes=[];
+    for(route of appRoutes){
+      if(route.data[1].tabTitle!=''){
+        this.NavigationRoutes.push({path: route.path, tabTitle: route.data[1].tabTitle});
+      }
+    }
+    console.log(this.NavigationRoutes);
   }
 };
+
+export interface Navigation{
+  path: string;
+  tabTitle: string;
+}

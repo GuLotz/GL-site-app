@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { song } from '../music/app.musicComponent';
 
 @Component({
   selector: 'mp3player',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class mp3player{
-  
+
 };
