@@ -20,8 +20,8 @@
 
 <div class="collapse navbar-collapse" id="mynavbar" >
   <ul class="nav navbar-nav" >
-    <li *ngFor = "let route of NavigationRoutes; let i = index">
-        <a routerLink='/{{route.path}}' class="link">{{route.tabTitle}}</a>
+    <li [routerLinkActive]="['active']" *ngFor = "let route of NavigationRoutes; let i = index">
+        <a routerLink='/{{route.path}}' class="link" routerLinkActive="active">{{route.tabTitle}}</a>
     </li>
   </ul>
 </div>

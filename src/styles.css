@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+header {
+  width: 960px;
+  height:230px;
+  padding:0px;
+  margin:0px;
+  border:0px;
+}
+
 body {
   margin:0px;
   padding:0px;
@@ -61,7 +69,7 @@ p {
   display: inline-block;
   list-style: none;
   color: #000;
-  background-color:#AEF;
+  background-color: #A0D9E9;
   padding: 5px 10px 2px 10px;
   border: 0px 0px 1px 0px;
   Margin: 10px 2px 0px 2px;
@@ -71,8 +79,8 @@ p {
   -khtml-border-radius: 6px 6px 0 0;  /* Konqueror */
   border-radius: 6px 6px 0 0;  /* CSS3 */
   border-style: solid;
-  border-width: thin;
-  border-color: #AEF;
+  border-width: 2px;
+  border-color: #A0D9E9;
   border-bottom-color: #50B0D0;
 
   outline-style: none;
@@ -91,16 +99,24 @@ p {
   background-color: #50E0FF;
 }
 
-.navbar-collapse ul li .act{
-  background-color: #000;
+.navbar-collapse ul .active{
+  background-color: #AEF;
+  border-color: #AEF;
+  border-bottom-color: #AEF;
 }
+
+/*
+.navbar-collapse ul li .act{
+  background-color: #FFF;
+}
+*/
 
 .navbar-collapse ul li .link{
   text-decoration: none;
 }
 
 .navbar-collapse ul li .link:active{
-  color: #000;
+  color: #FFF;
 }
 
 ul li{
@@ -115,13 +131,6 @@ ul li{
   width: 940px;
   background-color: #AEF;
   padding:10px;
-}
-
-.header{
-  width: 960px;
-  padding:0px;
-  margin:0px;
-  border:0px;
 }
 
 .navigation{
