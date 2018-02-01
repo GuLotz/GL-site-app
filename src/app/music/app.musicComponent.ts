@@ -14,8 +14,8 @@ export class musicComponent  {
   */
 
   songs : song[] = [
-      {id: 1, title: 'song1', url: 'src\assets\songs\Livingroom-001_with bass and organ.mp3'},
-      {id: 2, title: 'song2', url: 'src\assets\songs\Livingroom-001.mp3'}
+      {id: 1, title: 'Livingroom-001_with bass and organ', url: 'assets/songs/Livingroom-001_with bass and organ.mp3'},
+      {id: 2, title: 'Livingroom-001', url: 'assets/songs/Livingroom-001.mp3'}
     ];
 }
 
