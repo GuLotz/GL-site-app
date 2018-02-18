@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
 import { mp3player } from '../mp3player/mp3player';
-//import * as fs from '@angular/fs';
 
 @Component({
-  selector: 'music',
+  selector: 'app-music',
   templateUrl: 'music.html',
 })
 export class musicComponent  {
   /*
   constructor(){
-    var any = fs.readdir("./songs",(err, files)=>{return(files)});
+    var any = fs.readdir("./assets/songs",(err, files)=>{return(files)});
   };
   */
-
   songs : song[] = [
       {id: 1, title: 'Livingroom-001_with bass and organ', url: 'assets/songs/Livingroom-001_with bass and organ.mp3'},
       {id: 2, title: 'Livingroom-001', url: 'assets/songs/Livingroom-001.mp3'},

@@ -7,7 +7,7 @@ import { meMyselfAndIComponent } from './meMyselfAndI/app.meMyselfAndIComponent'
 import { musicComponent } from './music/app.musicComponent';
 
 @Component({
-  selector: 'gl-site-app',
+  selector: 'app-gl-site',
   templateUrl: 'main.html',
 })
 export class AppComponent  {
