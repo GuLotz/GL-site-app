@@ -19,13 +19,16 @@ import { mp3player } from './mp3player/mp3player';
 import { headerComponent }  from './header/app.headerComponent';
 import { contentComponent }  from './content/app.contentComponent';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     appRouting,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule.forRoot()
   ],
   declarations: [ AppComponent,
                   routingComponents,

@@ -7,5 +7,9 @@ import { song } from '../music/app.musicComponent';
 })
 
 export class mp3player{
-
+  experiment='';
 };
+
+export function playAudio(){
+  this.experiment='success';
+}
