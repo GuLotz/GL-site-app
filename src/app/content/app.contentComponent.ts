@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'content',
+  selector: 'app-content',
   templateUrl: 'content.html',
 })
 export class contentComponent  {

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'meMyselfAndI',
+  selector: 'app-meMyselfAndI',
   templateUrl: 'meMyselfAndI.html',
 })
 export class meMyselfAndIComponent  {

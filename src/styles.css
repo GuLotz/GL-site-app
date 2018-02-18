@@ -52,7 +52,7 @@ p {
   padding: 0px;
   margin: 0px;
   border: 0px;
-  width: 940px;
+  width: 960px;
 }
 
 .navbar-collapse {
@@ -93,10 +93,15 @@ p {
 .navbar-collapse ul li:hover{
   padding-top: 10px;
   Margin-top: 0px;
+  /*background-color: #AEF;*/
 }
 
 .navbar-collapse ul li:active{
   background-color: #50E0FF;
+}
+
+.navbar-collapse ul li:focus{
+  background-color: #AEF;
 }
 
 .navbar-collapse ul .active{
@@ -111,12 +116,25 @@ p {
 }
 */
 
-.navbar-collapse ul li .link{
+.navbar-collapse ul li a{
   text-decoration: none;
+  padding: 0;
 }
 
-.navbar-collapse ul li .link:active{
-  color: #FFF;
+.navbar-collapse ul li a:active{
+  background-color: #AEF;
+}
+
+.navbar-collapse ul li a:hover{
+  background-color: inherit;
+}
+
+.navbar-collapse ul li a:focus{
+  background-color: inherit;
+}
+
+.navbar-collapse ul li a{
+  /*background-color: #AEF;*/
 }
 
 ul li{
@@ -128,7 +146,7 @@ ul li{
 }
 
 .content{
-  width: 940px;
+  width: 960px;
   background-color: #AEF;
   padding:10px;
 }

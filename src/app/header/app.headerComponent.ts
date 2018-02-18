@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, NavigationEnd } from "@angular/router";
 import { appRoutes } from "../routing/app.routing";
 
 @Component({
-  selector: 'header',
+  selector: 'app-header',
   templateUrl: 'header.html',
   inputs: ['headerTitle']
 })

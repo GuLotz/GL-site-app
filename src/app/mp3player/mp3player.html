@@ -1,5 +1,23 @@
-<audio controls="true" >
-  <source src="assets\songs\Livingroom-001.mp3" type="audio/mp3">
-  <!--<source src="assets\songs\Livingroom-001_with bass and organ.mp3" type="audio/mp3">-->
-  <em class="error"><strong>Error:</strong> Your browser doesn't appear to support HTML5 Audio.</em>
-</audio>
+<button class="btn btn-default" (click)='goToPreviousSong()'>
+  <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+</button>
+<button class="btn btn-default" (click)='playAudio()'>
+  <span class="glyphicon {{playPauseGlyphicon}}" aria-hidden="true"></span>
+</button>
+<button class="btn btn-default" (click)='stopAudio()'>
+  <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
+</button>
+<button class="btn btn-default" (click)='goToNextSong()'>
+  <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
+</button>
+<input type="number" [(ngModel)]='songNumber'>
+<hr>
+<!--
+
+<p>
+  <audio controls="true" >
+    <source src="assets\songs\Livingroom-001.mp3" type="audio/mp3">
+    <em class="error"><strong>Error:</strong> Your browser doesn't appear to support HTML5 Audio.</em>
+  </audio>
+</p>
+-->
