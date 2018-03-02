@@ -1,12 +1,12 @@
 
 <h1>Gunnar's Music</h1>
 
-<app-mp3player></app-mp3player>
+<app-mp3player [Songs]='songs'></app-mp3player>
 
 <table>
   <tbody>
     <tr *ngFor="let song of songs">
-      <td> {{song.id}} </td>
+      <td> {{song.id}} &nbsp; </td>
       <td>
          <a href="{{song.url}}">{{song.title}}</a>
         <form>

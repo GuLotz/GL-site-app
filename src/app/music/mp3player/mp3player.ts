@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { song } from '../music/app.musicComponent';
+import { Component, OnInit, Input } from '@angular/core';
+import { song } from '../song.model';
+//import { songs } from '../app.musicComponent';
 
 //The question is, how to get hold of the songs:song[] defined in music.component.ts
 
@@ -13,6 +14,8 @@ export class mp3player{
   playPauseGlyphicon: string ='glyphicon-play';
   songNumber:number = 1;
 
+  @Input() Songs:song[];
+
   playAudio(){
     if (this.playMode==='playing'){
       this.playMode='pausing';
@@ -23,7 +26,7 @@ export class mp3player{
       if (this.playMode==='pausing'){
         this.playMode='playing';
         this.playPauseGlyphicon='glyphicon-pause';
-        console.log('Button Action: play song number' + this.songNumber);
+        console.log('Button Action: play song number' + this.songNumber + " " + this.Songs[this.songNumber].title);
       }
       else{
         console.log('wrong content of variable playmode:' + this.playMode);
@@ -36,21 +39,22 @@ export class mp3player{
     console.log('Button Action: stop');
   }
   goToPreviousSong(){
-    console.log('Button Action: previous. Playing song number ' + this.songNumber);
     this.playMode='playing';
     this.playPauseGlyphicon='glyphicon-pause';
     this.songNumber-=1;
-    if (this.songNumber===0){
+    console.log('Button Action: previous. Playing song number ' + this.songNumber);
+    /*if (this.songNumber===0){
       this.songNumber = this.songs.length();
-    }
+    }*/
   }
   goToNextSong(){
-    console.log('Button Action: next. Playing song number ' + this.songNumber);
     this.playMode='playing';
     this.playPauseGlyphicon='glyphicon-pause';
     this.songNumber+=1;
-    if (this.songNumber===this.songs.length()){
+    console.log('Button Action: next. Playing song number ' + this.songNumber);
+    /*if (this.songNumber===this.songs.length()){
       this.songNumber=1;
-    }
+    }*/
   }
+
 };

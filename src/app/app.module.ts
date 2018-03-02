@@ -14,7 +14,7 @@ import { musicComponent }  from './music/app.musicComponent';
 import { meMyselfAndIComponent }  from './meMyselfAndI/app.meMyselfAndIComponent';
 import { imprintComponent }  from './imprint/app.imprintComponent';
 import { homeComponent }  from './home/app.homeComponent';
-import { mp3player } from './mp3player/mp3player';
+import { mp3player } from './music/mp3player/mp3player';
 
 import { headerComponent }  from './header/app.headerComponent';
 import { contentComponent }  from './content/app.contentComponent';
@@ -28,7 +28,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpModule,
     appRouting,
     ReactiveFormsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
   ],
   declarations: [ AppComponent,
                   routingComponents,

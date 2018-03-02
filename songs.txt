@@ -1,0 +1,14 @@
+ Datentr„ger in Laufwerk C: ist Win7
+ Volumeseriennummer: 7CD2-3AB6
+
+ Verzeichnis von C:\dev\GL-site-app\src\assets\songs
+
+28.01.2018  16:09    <DIR>          .
+28.01.2018  16:09    <DIR>          ..
+28.01.2018  16:09         3.058.520 Livingroom-001.mp3
+28.01.2018  16:09         3.058.497 Livingroom-001b.mp3
+28.01.2018  16:09         3.058.475 Livingroom-001_with bass and organ.mp3
+28.01.2018  16:09         2.936.870 Livingroom-002.mp3
+28.01.2018  16:09         5.826.456 LivingRoom003_a.mp3
+               5 Datei(en),     17.938.818 Bytes
+               2 Verzeichnis(se), 151.189.266.432 Bytes frei
