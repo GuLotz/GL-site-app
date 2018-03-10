@@ -1,14 +1,14 @@
 
 <h1>Gunnar's Music</h1>
 
-<app-mp3player [Songs]='songs'></app-mp3player>
+<app-mp3player [Songs]='songs' [(songNumber)]='activeSong'></app-mp3player>
 
 <table>
   <tbody>
     <tr *ngFor="let song of songs">
-      <td> {{song.id}} &nbsp; </td>
+      <td [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'"> {{song.id}} &nbsp; </td>
       <td>
-         <a href="{{song.url}}">{{song.title}}</a>
+         <a href="{{song.url}}" [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'">{{song.title}}</a>
         <form>
         <!--<input type="button" (click)="playmp3({{song.title}})">-->
         </form>

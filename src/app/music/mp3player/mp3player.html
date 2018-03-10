@@ -10,17 +10,15 @@
 <button class="btn btn-default" (click)='goToNextSong()'>
   <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
 </button>
-<input type="number" [(ngModel)]='songNumber'>
+
 <div>
   Active song: {{Songs[songNumber].title}}
 </div>
 <hr>
 
-<!--
 <p>
   <audio>
-    <source src={{songs[songNumber].url}} type="audio/mp3">
+    <source src={{Songs[songNumber].url}} type="audio/mp3" autoplay>
     <em class="error"><strong>Error:</strong> Your browser doesn't appear to support HTML5 Audio.</em>
   </audio>
 </p>
--->

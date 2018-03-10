@@ -1,4 +1,5 @@
 import { Component, Output } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { mp3player } from './mp3player/mp3player';
 import { song } from './song.model'
 
@@ -14,6 +15,10 @@ export class musicComponent {
     new song(4, 'Livingroom-002', 'assets/songs/Livingroom-002.mp3'),
     new song(5, 'Livingroom-003_a', 'assets/songs/Livingroom003_a.mp3')
   ];
+  activeSong: number;
+  constructor(){
+    this.activeSong=1;
+  }
 }
 
 // export interface song {

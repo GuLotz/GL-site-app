@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { song } from '../song.model';
 //import { songs } from '../app.musicComponent';
 
@@ -12,10 +12,17 @@ import { song } from '../song.model';
 export class mp3player{
   playMode:string ='pausing';
   playPauseGlyphicon: string ='glyphicon-play';
-  songNumber:number = 1;
+  //songNumber:number = 1;
 
   @Input() Songs:song[];
+  @Input() songNumber: number;
+  @Output() songNumberChange: EventEmitter<number> = new EventEmitter<number>();
 
+/*
+  ngOnInit(){
+    this.songNumber=1;
+  }
+*/
   playAudio(){
     if (this.playMode==='playing'){
       this.playMode='pausing';
@@ -43,18 +50,20 @@ export class mp3player{
     this.playPauseGlyphicon='glyphicon-pause';
     this.songNumber-=1;
     console.log('Button Action: previous. Playing song number ' + this.songNumber);
-    /*if (this.songNumber===0){
-      this.songNumber = this.songs.length();
-    }*/
+
+    if (this.songNumber===-1){
+      this.songNumber = this.Songs.length-1;
+    }
+    this.songNumberChange.emit(this.songNumber);
   }
   goToNextSong(){
     this.playMode='playing';
     this.playPauseGlyphicon='glyphicon-pause';
     this.songNumber+=1;
     console.log('Button Action: next. Playing song number ' + this.songNumber);
-    /*if (this.songNumber===this.songs.length()){
-      this.songNumber=1;
-    }*/
+    if (this.songNumber===this.Songs.length){
+      this.songNumber=0;
+    }
+    this.songNumberChange.emit(this.songNumber);
   }
-
 };
