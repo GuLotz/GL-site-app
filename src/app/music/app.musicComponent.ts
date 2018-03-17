@@ -17,7 +17,7 @@ export class musicComponent {
   ];
   activeSong: number;
   constructor(){
-    this.activeSong=1;
+    this.activeSong=0;
   }
 }
 

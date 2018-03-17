@@ -11,13 +11,17 @@
   <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
 </button>
 
+<!--
 <div>
-  Active song: {{Songs[songNumber].title}}
+  <p>Active song: {{Songs[songNumber].title}}</p>
+  <p>URL: {{Songs[songNumber].url}}</p>
 </div>
+-->
+
 <hr>
 
 <p>
-  <audio>
+  <audio id="audioPlayer">
     <source src={{Songs[songNumber].url}} type="audio/mp3" autoplay>
     <em class="error"><strong>Error:</strong> Your browser doesn't appear to support HTML5 Audio.</em>
   </audio>
