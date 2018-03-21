@@ -1,13 +1,13 @@
-<button class="btn btn-default" (click)='goToPreviousSong()'>
+<button class="btn btn-default" (click)='goToPreviousSong(audioPlayer)'>
   <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
 </button>
-<button class="btn btn-default" (click)='playAudio()'>
+<button class="btn btn-default" (click)='playAudio(audioPlayer)'>
   <span class="glyphicon {{playPauseGlyphicon}}" aria-hidden="true"></span>
 </button>
-<button class="btn btn-default" (click)='stopAudio()'>
+<button class="btn btn-default" (click)='stopAudio(audioPlayer)'>
   <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
 </button>
-<button class="btn btn-default" (click)='goToNextSong()'>
+<button class="btn btn-default" (click)='goToNextSong(audioPlayer)'>
   <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
 </button>
 
@@ -21,8 +21,8 @@
 <hr>
 
 <p>
-  <audio id="audioPlayer">
-    <source src={{Songs[songNumber].url}} type="audio/mp3" autoplay>
+  <audio #audioPlayer onended="songHasEnded(audioPlayer)">
+    <source src={{Songs[songNumber].url}} type="audio/mp3">
     <em class="error"><strong>Error:</strong> Your browser doesn't appear to support HTML5 Audio.</em>
   </audio>
 </p>

@@ -23,8 +23,8 @@ export class mp3player{
     this.songNumber=1;
   }
 */
-  playAudio(){
-    var myPlayer:any = document.getElementById("audioPlayer");
+  playAudio(myPlayer: HTMLAudioElement){
+    //var myPlayer:any = document.getElementById("audioPlayer");
     if (this.playMode==='playing'){
       this.playMode='pausing';
       myPlayer.pause();
@@ -43,16 +43,16 @@ export class mp3player{
       }
     }
   }
-  stopAudio(){
-    var myPlayer:any = document.getElementById("audioPlayer");
+  stopAudio(myPlayer: HTMLAudioElement){
+    //var myPlayer:any = document.getElementById("audioPlayer");
     this.playMode='pausing';
     myPlayer.pause();
     myPlayer.currentTime = 0;
     this.playPauseGlyphicon='glyphicon-play';
     console.log('Button Action: stop');
   }
-  goToPreviousSong(){
-    var myPlayer:any = document.getElementById("audioPlayer");
+  goToPreviousSong(myPlayer: HTMLAudioElement){
+    //var myPlayer:any = document.getElementById("audioPlayer");
     this.playMode='playing';
     this.playPauseGlyphicon='glyphicon-pause';
     this.songNumber-=1;
@@ -66,8 +66,8 @@ export class mp3player{
     myPlayer.play();
     console.log('Button Action: previous. Playing song number ' + this.songNumber);
   }
-  goToNextSong(){
-    var myPlayer:any = document.getElementById("audioPlayer");
+  goToNextSong(myPlayer: HTMLAudioElement){
+    //var myPlayer:any = document.getElementById("audioPlayer");
     this.playMode='playing';
     this.playPauseGlyphicon='glyphicon-pause';
     this.songNumber+=1;
@@ -80,4 +80,20 @@ export class mp3player{
     myPlayer.play();
     console.log('Button Action: next. Playing song number ' + this.songNumber);
   }
+
+  songHasEnded(myPlayer: HTMLAudioElement){
+    //var myPlayer:any = document.getElementById("audioPlayer");
+    this.playMode='playing';
+    this.playPauseGlyphicon='glyphicon-pause';
+    this.songNumber+=1;
+    if (this.songNumber==this.Songs.length){
+      this.songNumber=0;
+    }
+    this.songNumberChange.emit(this.songNumber);
+    myPlayer.src = this.Songs[this.songNumber].url;
+    myPlayer.currentTime = 0;
+    myPlayer.play();
+    console.log('Song has ended. Progressing to next song. ' + this.songNumber);
+  }
+
 };

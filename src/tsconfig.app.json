@@ -12,7 +12,7 @@
     "outDir": "../out-tsc/app",
     "target": "es6",
     "module": "commonjs",
-    "baseUrl": "",
+    "baseUrl": "/angular/",
     "types": []
   },
   "exclude": [

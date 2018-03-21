@@ -8,7 +8,10 @@
     <tr *ngFor="let song of songs">
       <td [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'"> {{song.id}} &nbsp; </td>
       <td>
-         <a href="{{song.url}}" [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'">{{song.title}}</a>
+         <div [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'"
+              (click)='changeSong(song.id-1)'>
+              {{song.title}}
+          </div>
         <form>
         <!--<input type="button" (click)="playmp3({{song.title}})">-->
         </form>
