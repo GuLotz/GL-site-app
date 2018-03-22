@@ -1,21 +1,46 @@
 
-<h1>Gunnar's Music</h1>
 
-<app-mp3player [Songs]='songs' [(songNumber)]='activeSong'></app-mp3player>
+  <h1>Gunnar's Music</h1>
+  <div class="container" style="width:202px; height:40px;">
+    <button class="btn btn-default" (click)='goToPreviousSong()'>
+      <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+    </button>
+    <button class="btn btn-default" (click)='playAudio()'>
+      <span [ngClass]="(playMode==='pausing')?'glyphicon glyphicon-play':'glyphicon glyphicon-pause'" aria-hidden="true"></span>
+    </button>
+    <button class="btn btn-default" (click)='stopAudio()'>
+      <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
+    </button>
+    <button class="btn btn-default" (click)='goToNextSong()'>
+      <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
+    </button>
+    <div class="progress" style="height:5px;" (click)='progressBarClicked($event)'>
+      <div class="progress-bar"
+           role="progressbar"
+           style="height:5px;"
+           [ngStyle]="{'width': progress}"
+           aria-valuenow="0"
+           aria-valuemin="0"
+           aria-valuemax="100"
+           >
+      </div>
+    </div>
+  </div>
+  <hr>
+  <p>
+    <audio #audioPlayer>
+      <source src={{songs[activeSong].url}} type="audio/mp3">
+      <em class="error"><strong>Error:</strong> Your browser doesn't appear to support HTML5 Audio.</em>
+    </audio>
+  </p>
 
-<table>
-  <tbody>
-    <tr *ngFor="let song of songs">
-      <td [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'"> {{song.id}} &nbsp; </td>
-      <td>
-         <div [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'"
-              (click)='changeSong(song.id-1)'>
-              {{song.title}}
-          </div>
-        <form>
-        <!--<input type="button" (click)="playmp3({{song.title}})">-->
-        </form>
-      </td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <tbody>
+      <tr *ngFor="let song of songs" [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'">
+        <td > {{song.id}} &nbsp; </td>
+        <td>
+           <div (click)='changeSong(song.id-1)'>{{song.title}}</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>

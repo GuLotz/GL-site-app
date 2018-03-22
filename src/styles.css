@@ -168,3 +168,8 @@ img {
 .passiveSong {
   color: #369;
 }
+
+.activeSong:hover, .passiveSong:hover{
+  cursor:pointer;
+  text-decoration: underline;
+}
