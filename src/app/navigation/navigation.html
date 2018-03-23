@@ -18,13 +18,27 @@
 -->
 
 
-<div class="collapse navbar-collapse" id="mynavbar" >
+<!--<div class="collapse navbar-collapse" id="mynavbar" >-->
+<div class="collapse navbar-collapse" id="mynavbar">
   <ul class="nav nav-bar" >
     <li [routerLinkActive]="['active']" *ngFor = "let route of NavigationRoutes; let i = index">
         <a routerLink='/{{route.path}}' class="link" routerLinkActive="active">{{route.tabTitle}}</a>
     </li>
   </ul>
 </div>
+
+<!-- appears when screen is too small-->
+<div class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true">
+  <ul class="hamburger">
+     <li [routerLinkActive]="['active']" *ngFor = "let route of NavigationRoutes; let i = index">
+       <a [ngClass]="(i%2==0)?'even':'odd'" routerLink='/{{route.path}}' routerLinkActive="active">{{route.tabTitle}}</a>
+     </li>
+  </ul>
+  <hr>
+</div>
+
 <div class="content">
   <router-outlet></router-outlet>
+
+  <br>
 </div>
