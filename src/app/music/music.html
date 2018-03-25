@@ -14,7 +14,7 @@
     <button class="btn btn-default" (click)='goToNextSong()'>
       <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
     </button>
-    <div class="progress" style="height:5px;" (click)='progressBarClicked($event)'>
+    <div class="progress" style="height:5px;" (click)='progressBarClicked($event)' id="musicProgressBar">
       <div class="progress-bar"
            role="progressbar"
            style="height:5px;"
@@ -33,14 +33,15 @@
       <em class="error"><strong>Error:</strong> Your browser doesn't appear to support HTML5 Audio.</em>
     </audio>
   </p>
-
-  <table>
-    <tbody>
-      <tr *ngFor="let song of songs" [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'">
-        <td > {{song.id}} &nbsp; </td>
-        <td>
-           <div (click)='changeSong(song.id-1)'>{{song.title}}</div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="container-fluid" style="height:400px; overflow-y:scroll;">
+    <table>
+      <tbody>
+        <tr *ngFor="let song of songs" [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'">
+          <td style="width:26px;"> {{song.id}} </td>
+          <td>
+             <div (click)='changeSong(song.id-1)'>{{song.title}}</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -202,13 +202,21 @@ img {
 }
 
 .even {
-  background-color: #8080B0;
+  background-color: #9099B0;
   display:inline-block;
   padding:0px 10px 0px 10px;
 }
 
 .odd {
-  background-color: #B08080;
+  background-color: #8090B0;
   display:inline-block;
   padding:0px 10px 0px 10px;
+}
+
+#musicProgressBar {
+  margin-top: 3px;
+}
+
+td {
+  vertical-align: top;
 }
