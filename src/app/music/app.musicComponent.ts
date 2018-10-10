@@ -43,7 +43,8 @@ export class musicComponent {
     new song(25, 'Up Beat Number 34','assets/songs/QS8.2_34.mp3'),
     new song(26, 'Number 35','assets/songs/QS8.2_35.mp3'),
     new song(27, 'Number 37','assets/songs/QS8.2_37b.mp3'),
-    new song(28, 'Number 40','assets/songs/Song_40.mp3')
+    new song(28, 'Number 39','assets/songs/QS8.2-39.mp3'),
+    new song(29, 'Number 40','assets/songs/Song_40.mp3')
     //new song(14, '','assets/songs/'),
     //new song(14, '','assets/songs/'),
     //new song(14, '','assets/songs/'),
