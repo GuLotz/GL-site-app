@@ -19,6 +19,7 @@ import { headerComponent }  from './header/app.headerComponent';
 import { contentComponent }  from './content/app.contentComponent';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { audioExperimentsComponent } from './audio-experiments/audio-experiments.component';
 
 @NgModule({
   imports: [
@@ -37,7 +38,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
                   contentComponent,
                   musicComponent,
                   meMyselfAndIComponent,
-                  imprintComponent
+                  imprintComponent,
+                  audioExperimentsComponent
                 ],
   providers: [],
   bootstrap: [AppComponent]
