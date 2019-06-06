@@ -10,8 +10,8 @@
       "dom"
     ],
     "outDir": "../out-tsc/app",
-    "target": "es6",
-    "module": "commonjs",
+    "target": "es2015",
+    "module": "esnext",
     "baseUrl": "/angular/",
     "types": []
   },
