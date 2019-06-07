@@ -8,7 +8,7 @@ import { song } from './song.model'
 })
 
 export class musicComponent {
-  @ViewChild('audioPlayer') myPlayer;
+  @ViewChild('audioPlayer', { static: true }) myPlayer;
 
   playMode:string ='pausing';
 
