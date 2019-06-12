@@ -1,3 +1,7 @@
-<h1>
-  {{title}}
-</h1>
+<!--<div style="width:960px;margin:auto;">-->
+  <div class="background-pane container-fluid" (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')">
+    <div class="container-fluid" style="max-width:960px;padding:0px;">
+      <app-header></app-header>
+      <app-navigation></app-navigation>
+    </div>
+  </div>

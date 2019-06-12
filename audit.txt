@@ -1,0 +1,1529 @@
+                                                                                
+                       === npm audit security report ===                        
+                                                                                
+# Run  npm install --dev @angular/cli@6.2.3  to resolve 91 vulnerabilities
+                                                                                
+  High            Regular Expression Denial of Service                          
+                                                                                
+  Package         tough-cookie                                                  
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/architect >                    
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  request > tough-cookie                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/525                        
+                                                                                
+
+
+                                                                                
+  High            Regular Expression Denial of Service                          
+                                                                                
+  Package         tough-cookie                                                  
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/core > chokidar > fsevents >   
+                  node-pre-gyp > request > tough-cookie                         
+                                                                                
+  More info       https://nodesecurity.io/advisories/525                        
+                                                                                
+
+
+                                                                                
+  High            Regular Expression Denial of Service                          
+                                                                                
+  Package         tough-cookie                                                  
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/schematics >                   
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  request > tough-cookie                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/525                        
+                                                                                
+
+
+                                                                                
+  High            Regular Expression Denial of Service                          
+                                                                                
+  Package         tough-cookie                                                  
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular > @angular-devkit/core >   
+                  chokidar > fsevents > node-pre-gyp > request > tough-cookie   
+                                                                                
+  More info       https://nodesecurity.io/advisories/525                        
+                                                                                
+
+
+                                                                                
+  High            Regular Expression Denial of Service                          
+                                                                                
+  Package         tough-cookie                                                  
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular >                          
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > request > tough-cookie            
+                                                                                
+  More info       https://nodesecurity.io/advisories/525                        
+                                                                                
+
+
+                                                                                
+  High            Regular Expression Denial of Service                          
+                                                                                
+  Package         tough-cookie                                                  
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update > @angular-devkit/core >    
+                  chokidar > fsevents > node-pre-gyp > request > tough-cookie   
+                                                                                
+  More info       https://nodesecurity.io/advisories/525                        
+                                                                                
+
+
+                                                                                
+  High            Regular Expression Denial of Service                          
+                                                                                
+  Package         tough-cookie                                                  
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update >                           
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > request > tough-cookie            
+                                                                                
+  More info       https://nodesecurity.io/advisories/525                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         debug                                                         
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/architect >                    
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  tar-pack > debug                                              
+                                                                                
+  More info       https://nodesecurity.io/advisories/534                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         debug                                                         
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/core > chokidar > fsevents >   
+                  node-pre-gyp > tar-pack > debug                               
+                                                                                
+  More info       https://nodesecurity.io/advisories/534                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         debug                                                         
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/schematics >                   
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  tar-pack > debug                                              
+                                                                                
+  More info       https://nodesecurity.io/advisories/534                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         debug                                                         
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular > @angular-devkit/core >   
+                  chokidar > fsevents > node-pre-gyp > tar-pack > debug         
+                                                                                
+  More info       https://nodesecurity.io/advisories/534                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         debug                                                         
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular >                          
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > tar-pack > debug                  
+                                                                                
+  More info       https://nodesecurity.io/advisories/534                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         debug                                                         
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update > @angular-devkit/core >    
+                  chokidar > fsevents > node-pre-gyp > tar-pack > debug         
+                                                                                
+  More info       https://nodesecurity.io/advisories/534                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         debug                                                         
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update >                           
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > tar-pack > debug                  
+                                                                                
+  More info       https://nodesecurity.io/advisories/534                        
+                                                                                
+
+
+                                                                                
+  Low             Prototype Pollution                                           
+                                                                                
+  Package         deep-extend                                                   
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/architect >                    
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  rc > deep-extend                                              
+                                                                                
+  More info       https://nodesecurity.io/advisories/612                        
+                                                                                
+
+
+                                                                                
+  Low             Prototype Pollution                                           
+                                                                                
+  Package         deep-extend                                                   
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/core > chokidar > fsevents >   
+                  node-pre-gyp > rc > deep-extend                               
+                                                                                
+  More info       https://nodesecurity.io/advisories/612                        
+                                                                                
+
+
+                                                                                
+  Low             Prototype Pollution                                           
+                                                                                
+  Package         deep-extend                                                   
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/schematics >                   
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  rc > deep-extend                                              
+                                                                                
+  More info       https://nodesecurity.io/advisories/612                        
+                                                                                
+
+
+                                                                                
+  Low             Prototype Pollution                                           
+                                                                                
+  Package         deep-extend                                                   
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular > @angular-devkit/core >   
+                  chokidar > fsevents > node-pre-gyp > rc > deep-extend         
+                                                                                
+  More info       https://nodesecurity.io/advisories/612                        
+                                                                                
+
+
+                                                                                
+  Low             Prototype Pollution                                           
+                                                                                
+  Package         deep-extend                                                   
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular >                          
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > rc > deep-extend                  
+                                                                                
+  More info       https://nodesecurity.io/advisories/612                        
+                                                                                
+
+
+                                                                                
+  Low             Prototype Pollution                                           
+                                                                                
+  Package         deep-extend                                                   
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update > @angular-devkit/core >    
+                  chokidar > fsevents > node-pre-gyp > rc > deep-extend         
+                                                                                
+  More info       https://nodesecurity.io/advisories/612                        
+                                                                                
+
+
+                                                                                
+  Low             Prototype Pollution                                           
+                                                                                
+  Package         deep-extend                                                   
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update >                           
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > rc > deep-extend                  
+                                                                                
+  More info       https://nodesecurity.io/advisories/612                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/architect >                    
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  hawk > boom > hoek                                            
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/architect >                    
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  hawk > cryptiles > boom > hoek                                
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/architect >                    
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  hawk > hoek                                                   
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/architect >                    
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  hawk > sntp > hoek                                            
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/architect >                    
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  request > hawk > boom > hoek                                  
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/architect >                    
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  request > hawk > cryptiles > boom > hoek                      
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/architect >                    
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  request > hawk > hoek                                         
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/architect >                    
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  request > hawk > sntp > hoek                                  
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/core > chokidar > fsevents >   
+                  node-pre-gyp > hawk > boom > hoek                             
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/core > chokidar > fsevents >   
+                  node-pre-gyp > hawk > cryptiles > boom > hoek                 
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/core > chokidar > fsevents >   
+                  node-pre-gyp > hawk > hoek                                    
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/core > chokidar > fsevents >   
+                  node-pre-gyp > hawk > sntp > hoek                             
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/core > chokidar > fsevents >   
+                  node-pre-gyp > request > hawk > boom > hoek                   
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/core > chokidar > fsevents >   
+                  node-pre-gyp > request > hawk > cryptiles > boom > hoek       
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/core > chokidar > fsevents >   
+                  node-pre-gyp > request > hawk > hoek                          
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/core > chokidar > fsevents >   
+                  node-pre-gyp > request > hawk > sntp > hoek                   
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/schematics >                   
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  hawk > boom > hoek                                            
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/schematics >                   
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  hawk > cryptiles > boom > hoek                                
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/schematics >                   
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  hawk > hoek                                                   
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/schematics >                   
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  hawk > sntp > hoek                                            
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/schematics >                   
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  request > hawk > boom > hoek                                  
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/schematics >                   
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  request > hawk > cryptiles > boom > hoek                      
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/schematics >                   
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  request > hawk > hoek                                         
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/schematics >                   
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  request > hawk > sntp > hoek                                  
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular > @angular-devkit/core >   
+                  chokidar > fsevents > node-pre-gyp > hawk > boom > hoek       
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular > @angular-devkit/core >   
+                  chokidar > fsevents > node-pre-gyp > hawk > cryptiles > boom  
+                  > hoek                                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular > @angular-devkit/core >   
+                  chokidar > fsevents > node-pre-gyp > hawk > hoek              
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular > @angular-devkit/core >   
+                  chokidar > fsevents > node-pre-gyp > hawk > sntp > hoek       
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular > @angular-devkit/core >   
+                  chokidar > fsevents > node-pre-gyp > request > hawk > boom >  
+                  hoek                                                          
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular > @angular-devkit/core >   
+                  chokidar > fsevents > node-pre-gyp > request > hawk >         
+                  cryptiles > boom > hoek                                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular > @angular-devkit/core >   
+                  chokidar > fsevents > node-pre-gyp > request > hawk > hoek    
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular > @angular-devkit/core >   
+                  chokidar > fsevents > node-pre-gyp > request > hawk > sntp >  
+                  hoek                                                          
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular >                          
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > hawk > boom > hoek                
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular >                          
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek    
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular >                          
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > hawk > hoek                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular >                          
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > hawk > sntp > hoek                
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular >                          
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > request > hawk > boom > hoek      
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular >                          
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > request > hawk > cryptiles >      
+                  boom > hoek                                                   
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular >                          
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > request > hawk > hoek             
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular >                          
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > request > hawk > sntp > hoek      
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update > @angular-devkit/core >    
+                  chokidar > fsevents > node-pre-gyp > hawk > boom > hoek       
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update > @angular-devkit/core >    
+                  chokidar > fsevents > node-pre-gyp > hawk > cryptiles > boom  
+                  > hoek                                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update > @angular-devkit/core >    
+                  chokidar > fsevents > node-pre-gyp > hawk > hoek              
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update > @angular-devkit/core >    
+                  chokidar > fsevents > node-pre-gyp > hawk > sntp > hoek       
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update > @angular-devkit/core >    
+                  chokidar > fsevents > node-pre-gyp > request > hawk > boom >  
+                  hoek                                                          
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update > @angular-devkit/core >    
+                  chokidar > fsevents > node-pre-gyp > request > hawk >         
+                  cryptiles > boom > hoek                                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update > @angular-devkit/core >    
+                  chokidar > fsevents > node-pre-gyp > request > hawk > hoek    
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update > @angular-devkit/core >    
+                  chokidar > fsevents > node-pre-gyp > request > hawk > sntp >  
+                  hoek                                                          
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update >                           
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > hawk > boom > hoek                
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update >                           
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek    
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update >                           
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > hawk > hoek                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update >                           
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > hawk > sntp > hoek                
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update >                           
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > request > hawk > boom > hoek      
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update >                           
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > request > hawk > cryptiles >      
+                  boom > hoek                                                   
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update >                           
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > request > hawk > hoek             
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update >                           
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > request > hawk > sntp > hoek      
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  High            Regular Expression Denial of Service                          
+                                                                                
+  Package         sshpk                                                         
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/architect >                    
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  request > http-signature > sshpk                              
+                                                                                
+  More info       https://nodesecurity.io/advisories/606                        
+                                                                                
+
+
+                                                                                
+  High            Regular Expression Denial of Service                          
+                                                                                
+  Package         sshpk                                                         
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/core > chokidar > fsevents >   
+                  node-pre-gyp > request > http-signature > sshpk               
+                                                                                
+  More info       https://nodesecurity.io/advisories/606                        
+                                                                                
+
+
+                                                                                
+  High            Regular Expression Denial of Service                          
+                                                                                
+  Package         sshpk                                                         
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/schematics >                   
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  request > http-signature > sshpk                              
+                                                                                
+  More info       https://nodesecurity.io/advisories/606                        
+                                                                                
+
+
+                                                                                
+  High            Regular Expression Denial of Service                          
+                                                                                
+  Package         sshpk                                                         
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular > @angular-devkit/core >   
+                  chokidar > fsevents > node-pre-gyp > request >                
+                  http-signature > sshpk                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/606                        
+                                                                                
+
+
+                                                                                
+  High            Regular Expression Denial of Service                          
+                                                                                
+  Package         sshpk                                                         
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular >                          
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > request > http-signature > sshpk  
+                                                                                
+  More info       https://nodesecurity.io/advisories/606                        
+                                                                                
+
+
+                                                                                
+  High            Regular Expression Denial of Service                          
+                                                                                
+  Package         sshpk                                                         
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update > @angular-devkit/core >    
+                  chokidar > fsevents > node-pre-gyp > request >                
+                  http-signature > sshpk                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/606                        
+                                                                                
+
+
+                                                                                
+  High            Regular Expression Denial of Service                          
+                                                                                
+  Package         sshpk                                                         
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update >                           
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > request > http-signature > sshpk  
+                                                                                
+  More info       https://nodesecurity.io/advisories/606                        
+                                                                                
+
+
+                                                                                
+  Moderate        Out-of-bounds Read                                            
+                                                                                
+  Package         stringstream                                                  
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/architect >                    
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  request > stringstream                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/664                        
+                                                                                
+
+
+                                                                                
+  Moderate        Out-of-bounds Read                                            
+                                                                                
+  Package         stringstream                                                  
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/core > chokidar > fsevents >   
+                  node-pre-gyp > request > stringstream                         
+                                                                                
+  More info       https://nodesecurity.io/advisories/664                        
+                                                                                
+
+
+                                                                                
+  Moderate        Out-of-bounds Read                                            
+                                                                                
+  Package         stringstream                                                  
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @angular-devkit/schematics >                   
+                  @angular-devkit/core > chokidar > fsevents > node-pre-gyp >   
+                  request > stringstream                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/664                        
+                                                                                
+
+
+                                                                                
+  Moderate        Out-of-bounds Read                                            
+                                                                                
+  Package         stringstream                                                  
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular > @angular-devkit/core >   
+                  chokidar > fsevents > node-pre-gyp > request > stringstream   
+                                                                                
+  More info       https://nodesecurity.io/advisories/664                        
+                                                                                
+
+
+                                                                                
+  Moderate        Out-of-bounds Read                                            
+                                                                                
+  Package         stringstream                                                  
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/angular >                          
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > request > stringstream            
+                                                                                
+  More info       https://nodesecurity.io/advisories/664                        
+                                                                                
+
+
+                                                                                
+  Moderate        Out-of-bounds Read                                            
+                                                                                
+  Package         stringstream                                                  
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update > @angular-devkit/core >    
+                  chokidar > fsevents > node-pre-gyp > request > stringstream   
+                                                                                
+  More info       https://nodesecurity.io/advisories/664                        
+                                                                                
+
+
+                                                                                
+  Moderate        Out-of-bounds Read                                            
+                                                                                
+  Package         stringstream                                                  
+                                                                                
+  Dependency of   @angular/cli [dev]                                            
+                                                                                
+  Path            @angular/cli > @schematics/update >                           
+                  @angular-devkit/schematics > @angular-devkit/core > chokidar  
+                  > fsevents > node-pre-gyp > request > stringstream            
+                                                                                
+  More info       https://nodesecurity.io/advisories/664                        
+                                                                                
+
+
+# Run  npm update fsevents --depth 3  to resolve 13 vulnerabilities
+                                                                                
+  High            Regular Expression Denial of Service                          
+                                                                                
+  Package         tough-cookie                                                  
+                                                                                
+  Dependency of   @angular/compiler-cli [dev]                                   
+                                                                                
+  Path            @angular/compiler-cli > chokidar > fsevents > node-pre-gyp >  
+                  request > tough-cookie                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/525                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         debug                                                         
+                                                                                
+  Dependency of   @angular/compiler-cli [dev]                                   
+                                                                                
+  Path            @angular/compiler-cli > chokidar > fsevents > node-pre-gyp >  
+                  tar-pack > debug                                              
+                                                                                
+  More info       https://nodesecurity.io/advisories/534                        
+                                                                                
+
+
+                                                                                
+  Low             Prototype Pollution                                           
+                                                                                
+  Package         deep-extend                                                   
+                                                                                
+  Dependency of   @angular/compiler-cli [dev]                                   
+                                                                                
+  Path            @angular/compiler-cli > chokidar > fsevents > node-pre-gyp >  
+                  rc > deep-extend                                              
+                                                                                
+  More info       https://nodesecurity.io/advisories/612                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/compiler-cli [dev]                                   
+                                                                                
+  Path            @angular/compiler-cli > chokidar > fsevents > node-pre-gyp >  
+                  hawk > boom > hoek                                            
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/compiler-cli [dev]                                   
+                                                                                
+  Path            @angular/compiler-cli > chokidar > fsevents > node-pre-gyp >  
+                  hawk > cryptiles > boom > hoek                                
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/compiler-cli [dev]                                   
+                                                                                
+  Path            @angular/compiler-cli > chokidar > fsevents > node-pre-gyp >  
+                  hawk > hoek                                                   
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/compiler-cli [dev]                                   
+                                                                                
+  Path            @angular/compiler-cli > chokidar > fsevents > node-pre-gyp >  
+                  hawk > sntp > hoek                                            
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/compiler-cli [dev]                                   
+                                                                                
+  Path            @angular/compiler-cli > chokidar > fsevents > node-pre-gyp >  
+                  request > hawk > boom > hoek                                  
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/compiler-cli [dev]                                   
+                                                                                
+  Path            @angular/compiler-cli > chokidar > fsevents > node-pre-gyp >  
+                  request > hawk > cryptiles > boom > hoek                      
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/compiler-cli [dev]                                   
+                                                                                
+  Path            @angular/compiler-cli > chokidar > fsevents > node-pre-gyp >  
+                  request > hawk > hoek                                         
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  Moderate        Prototype pollution                                           
+                                                                                
+  Package         hoek                                                          
+                                                                                
+  Dependency of   @angular/compiler-cli [dev]                                   
+                                                                                
+  Path            @angular/compiler-cli > chokidar > fsevents > node-pre-gyp >  
+                  request > hawk > sntp > hoek                                  
+                                                                                
+  More info       https://nodesecurity.io/advisories/566                        
+                                                                                
+
+
+                                                                                
+  High            Regular Expression Denial of Service                          
+                                                                                
+  Package         sshpk                                                         
+                                                                                
+  Dependency of   @angular/compiler-cli [dev]                                   
+                                                                                
+  Path            @angular/compiler-cli > chokidar > fsevents > node-pre-gyp >  
+                  request > http-signature > sshpk                              
+                                                                                
+  More info       https://nodesecurity.io/advisories/606                        
+                                                                                
+
+
+                                                                                
+  Moderate        Out-of-bounds Read                                            
+                                                                                
+  Package         stringstream                                                  
+                                                                                
+  Dependency of   @angular/compiler-cli [dev]                                   
+                                                                                
+  Path            @angular/compiler-cli > chokidar > fsevents > node-pre-gyp >  
+                  request > stringstream                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/664                        
+                                                                                
+
+
+
+[!] 104 vulnerabilities found - Packages audited: 24106 (24078 dev, 3308 optional)
+    Severity: 16 Low | 72 Moderate | 16 High
+

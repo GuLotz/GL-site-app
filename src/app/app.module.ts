@@ -1,9 +1,10 @@
+import { HttpClientModule } from '@angular/common/http';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -19,12 +20,13 @@ import { headerComponent }  from './header/app.headerComponent';
 import { contentComponent }  from './content/app.contentComponent';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { audioExperimentsComponent } from './audio-experiments/audio-experiments.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     appRouting,
     ReactiveFormsModule,
     NgbModule.forRoot(),
@@ -37,7 +39,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
                   contentComponent,
                   musicComponent,
                   meMyselfAndIComponent,
-                  imprintComponent
+                  imprintComponent,
+                  audioExperimentsComponent
                 ],
   providers: [],
   bootstrap: [AppComponent]
