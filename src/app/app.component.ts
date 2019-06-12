@@ -41,3 +41,4 @@ export class AppComponent  {
 }
 
 export var pageHeaderTitle:string;
+export var swipe:string;
