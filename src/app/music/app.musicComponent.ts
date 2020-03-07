@@ -144,7 +144,7 @@ export class musicComponent {
     this.myPlayer.nativeElement.src = this.songs[this.activeSong].url;
     this.myPlayer.nativeElement.play();
   }
-  progressBarClicked(mouse: any){ // I would have wanted to use MouseEvent, but that does not know its properties and give compilation errors
+  progressBarClicked(mouse: any){ // I would have wanted to use MouseEvent, but that does not know its properties and gives compilation errors
     var percentPlayed: number;
     var progressBarWidth: number;
     console.log('Progressbar was clicked');
