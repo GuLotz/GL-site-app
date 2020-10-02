@@ -142,7 +142,7 @@ hr {
 
 ul li{
   color: #000;
-  padding: 1px 10px 1px 10px;
+  padding: 1px 10px 5px 10px;
 
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100%;
@@ -227,6 +227,7 @@ td {
   font-family: Arial, Helvetica, sans-serif;
   vertical-align: top;
   padding-right: 4pt;
+  padding-left: 4pt;
 }
 
 .background-pane {
