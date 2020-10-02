@@ -1,4 +1,18 @@
-<div class='' (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')">
+<div
+(panup)="onPanUp($event)"
+(pandown)="onPanDown($event)">
+<!--
+(panup)="onPanUp($event)"
+(pandown)="onPanDown($event)">
+(pan)="onPan($event)"
+(panstart)="onPanStart($event)"
+(panmove)="onPanMove($event)"
+(panend)="onPanEnd($event)"
+(pancancel)="onPanCancel($event)"
+(panleft)="onPanLeft($event)"
+(panright)="onPanRight($event)"-->
   <p>audio-experiments works!</p>
-  <h2>{{swipe}}</h2>
+  <h2>
+    {{panDirection}}
+  </h2>
 </div>
