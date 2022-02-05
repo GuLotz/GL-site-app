@@ -46,7 +46,8 @@ export class musicComponent {
     new song(28, 'Number 39','assets/songs/QS8.2-39.mp3'),
     new song(29, 'Number 40','assets/songs/Song_40.mp3'),
     new song(30, '2019-001-2','assets/songs/2019-001-2.mp3'),
-    new song(31, '2021-12-27 Between Years, between jobs', 'assets/songs/2021-12-27.mp3')
+    new song(31, '2021-12-27 Between Years, between jobs', 'assets/songs/2021-12-27.mp3'),
+    new song(32, '2022-01-16 Whom were you thinking of, she asked', 'assets/songs/2022-01-16.mp3')
     //new song(14, '','assets/songs/'),
     //new song(14, '','assets/songs/'),
   ];
