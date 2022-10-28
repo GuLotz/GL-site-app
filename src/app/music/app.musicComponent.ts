@@ -49,7 +49,8 @@ export class musicComponent {
     new song(31, '2021-12-27 Between Years, between jobs', 'assets/songs/2021-12-27.mp3'),
     new song(32, '2022-01-16 Whom were you thinking of, she asked', 'assets/songs/2022-01-16.mp3'),
     new song(33, '2022-02-05 New drums on the drive', 'assets/songs/2022-02-05.mp3'),
-    new song(34, '2022-02-08 Horny trombones', 'assets/songs/2022-02-08.mp3')
+    new song(34, '2022-02-08 Horny trombones', 'assets/songs/2022-02-08.mp3'),
+    new song(35, '2022-02-12 Low Flyer', 'assets/songs/2022-02-12.mp3')
     //new song(14, '','assets/songs/'),
     //new song(14, '','assets/songs/'),
   ];
