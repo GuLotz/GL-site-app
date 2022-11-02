@@ -50,7 +50,8 @@ export class musicComponent {
     new song(32, '2022-01-16 Whom were you thinking of, she asked', 'assets/songs/2022-01-16.mp3'),
     new song(33, '2022-02-05 New drums on the drive', 'assets/songs/2022-02-05.mp3'),
     new song(34, '2022-02-08 Horny trombones', 'assets/songs/2022-02-08.mp3'),
-    new song(35, '2022-02-12 Low Flyer', 'assets/songs/2022-02-12.mp3')
+    new song(35, '2022-02-12 Low Flyer', 'assets/songs/2022-02-12.mp3'),
+    new song(36, '2022-10-23', 'assets/songs/2022-10-23.mp3')
     //new song(14, '','assets/songs/'),
     //new song(14, '','assets/songs/'),
   ];
