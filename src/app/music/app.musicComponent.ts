@@ -1,6 +1,7 @@
 import { Component, ViewChild, AfterViewInit  } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { song } from './song.model'
+import { song } from './song.model';
+import * as songlist from "../../assets/songs/songs.json";
 
 @Component({
   selector: 'app-music',
@@ -13,7 +14,8 @@ export class musicComponent {
   playMode:string ='pausing';
 
   progress:string ='0%';
-
+  songs = require('../../assets/songs/songs.json');
+/*
   songs: song[]=[
     new song( 1, 'Guitar Rock', 'assets/songs/GunAudio5b.mp3'),
     new song( 2, 'Gritty Organ', 'assets/songs/QS8.2_018.mp3'),
@@ -51,11 +53,13 @@ export class musicComponent {
     new song(33, '2022-02-05 New drums on the drive', 'assets/songs/2022-02-05.mp3'),
     new song(34, '2022-02-08 Horny trombones', 'assets/songs/2022-02-08.mp3'),
     new song(35, '2022-02-12 Low Flyer', 'assets/songs/2022-02-12.mp3'),
-    new song(36, '2022-10-23', 'assets/songs/2022-10-23.mp3')
+    new song(36, '2022-10-23', 'assets/songs/2022-10-23.mp3'),
+    new song(37, "2022-11-04 Marianne's birthday song", 'assets/songs/2022-11-04.mp3')
+
     //new song(14, '','assets/songs/'),
     //new song(14, '','assets/songs/'),
   ];
-
+*/
   activeSong: number;
 
   constructor(){
@@ -69,7 +73,7 @@ export class musicComponent {
       if (this.activeSong==this.songs.length){
         this.activeSong=0;
       }
-      this.myPlayer.nativeElement.src = this.songs[this.activeSong].url;
+      this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
       this.myPlayer.nativeElement.currentTime = 0;
       this.myPlayer.nativeElement.play();
     }
@@ -114,7 +118,7 @@ export class musicComponent {
     if (this.activeSong==-1){
       this.activeSong = this.songs.length-1;
     }
-    this.myPlayer.nativeElement.src = this.songs[this.activeSong].url;
+    this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
     this.myPlayer.nativeElement.currentTime = 0;
     this.myPlayer.nativeElement.play();
     console.log('Button Action: previous. Playing song number ' + this.activeSong);
@@ -126,7 +130,7 @@ export class musicComponent {
     if (this.activeSong==this.songs.length){
       this.activeSong=0;
     }
-    this.myPlayer.nativeElement.src = this.songs[this.activeSong].url;
+    this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
     this.myPlayer.nativeElement.currentTime = 0;
     this.myPlayer.nativeElement.play();
     console.log('Button Action: next. Playing song number ' + this.activeSong);
@@ -138,7 +142,7 @@ export class musicComponent {
     if (this.activeSong==this.songs.length){
       this.activeSong=0;
     }
-    this.myPlayer.nativeElement.src = this.songs[this.activeSong].url;
+    this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
     this.myPlayer.nativeElement.currentTime = 0;
     this.myPlayer.nativeElement.play();
     console.log('Song has ended. Progressing to next song. ' + this.activeSong);
@@ -147,7 +151,7 @@ export class musicComponent {
     this.playMode='playing';
     this.myPlayer.nativeElement.currentTime = 0;
     this.activeSong=toSong;
-    this.myPlayer.nativeElement.src = this.songs[this.activeSong].url;
+    this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
     this.myPlayer.nativeElement.play();
   }
   progressBarClicked(mouse: any){ // I would have wanted to use MouseEvent, but that does not know its properties and gives compilation errors

@@ -12,7 +12,10 @@
     "target": "es2015",
     "module": "es2020",
     "baseUrl": "/angular/",
-    "types": []
+    "types": [ "node" ],
+    "typeRoots": [ "../node_modules/@types" ],
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "files": [
     "main.ts",
