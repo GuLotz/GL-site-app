@@ -17,6 +17,7 @@ export class musicComponent {
 
   progress:string ='0%';
   songs = require('../../assets/songs/songs.json');
+  songs2 = this.songs;
 
   dataJson: Observable<unknown>;
   dynamicallyLoadJsonFile = import('../../assets/songs/songs.json');
@@ -72,8 +73,10 @@ export class musicComponent {
     this.activeSong=0;
   }
 
-  ngOnInit(){
+  async ngOnInit(){
     this.dataJson = fromPromise(this.dynamicallyLoadJsonFile);
+    console.log(this.dataJson);
+    this.dataJson.subscribe(data => { this.songs2 = data })
   }
 
   ngAfterViewInit(){
@@ -182,5 +185,5 @@ export class musicComponent {
 // export interface song {
 //     id: number,
 //     title: string,
-//     url: string
+//     path: string
 // };
