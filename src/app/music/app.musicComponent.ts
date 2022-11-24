@@ -2,6 +2,8 @@ import { Component, ViewChild, AfterViewInit  } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { song } from './song.model';
 import * as songlist from "../../assets/songs/songs.json";
+import {Observable} from 'rxjs';
+import { fromPromise } from 'rxjs/internal-compatibility';
 
 @Component({
   selector: 'app-music',
@@ -15,6 +17,10 @@ export class musicComponent {
 
   progress:string ='0%';
   songs = require('../../assets/songs/songs.json');
+
+  dataJson: Observable<unknown>;
+  dynamicallyLoadJsonFile = import('../../assets/songs/songs.json');
+
 /*
   songs: song[]=[
     new song( 1, 'Guitar Rock', 'assets/songs/GunAudio5b.mp3'),
@@ -64,6 +70,10 @@ export class musicComponent {
 
   constructor(){
     this.activeSong=0;
+  }
+
+  ngOnInit(){
+    this.dataJson = fromPromise(this.dynamicallyLoadJsonFile);
   }
 
   ngAfterViewInit(){
