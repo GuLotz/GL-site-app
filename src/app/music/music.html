@@ -34,7 +34,8 @@
     </audio>
   </p>
 
-  <div class="container-fluid" style="overflow-y:scroll;height:48vh;">
+<!--
+<div class="container-fluid" style="overflow-y:scroll;height:48vh;">
     <table>
         <tbody>
             <tr *ngFor="let song of songs" [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'">
@@ -46,4 +47,18 @@
         </tbody>
     </table>
   </div>
+  -->
+
+  <ng-container *ngIf="dataJson | async as data">
+    <div class="container-fluid" style="overflow-y:scroll;height:48vh;">
+      <table>
+        <tbody>
+          <tr *ngFor="let song of songs" [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'">
+            <td> {{song.id }} </td>
+            <td><div (click)='changeSong(song.id-1)'>{{song.title}}</div></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+  </ng-container>
  

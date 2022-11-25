@@ -1,5 +1,8 @@
-import { Component, ViewChild, AfterViewInit, OnInit  } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
 import { song } from './song.model';
+
+import { Observable } from 'rxjs';
+import { fromPromise } from 'rxjs/internal-compatibility';
 
 @Component({
   selector: 'app-music',
@@ -12,7 +15,11 @@ export class musicComponent implements OnInit {
   playMode:string ='pausing';
 
   progress:string ='0%';
-  songs: Array<song> = require('../../assets/songs/songs.json');
+  //songs: Array<song> = require('../../assets/songs/songs.json');
+  songs: Array<song> = [new song(1, 'Guitar Rock', 'assets/songs/GunAudio5b.mp3')];
+
+  dataJson: Observable<unknown>;
+  dynamicallyLoadJsonFile = import('../../assets/songs/songs.json');
 
 /*
   songs: song[]=[
@@ -60,16 +67,27 @@ export class musicComponent implements OnInit {
   ];
 */
   activeSong: number;
+  sub: any;
 
   constructor(){
     this.activeSong = 0;
   }
 
   async ngOnInit() {
-    await import("../../assets/songs/songs.json").then(data => {
+    this.dataJson = fromPromise(this.dynamicallyLoadJsonFile);
+    this.readSongList();
+  }
+  readSongList() {
+    this.sub = this.dataJson.subscribe((data) => {
+      this.songs = data['default'];
+      //console.log(this.songs);
+      this.sub.unsubscribe()
+    })
+    /*await import("../../assets/songs/songs.json").then(data => {
       this.songs = data['default'];
       console.log(this.songs);
     });
+    */
   }
 
   ngAfterViewInit(){
@@ -154,7 +172,7 @@ export class musicComponent implements OnInit {
     console.log('Song has ended. Progressing to next song. ' + this.activeSong);
   }
   changeSong(toSong: number) {
-    this.ngOnInit();
+    this.readSongList();
     this.playMode='playing';
     this.myPlayer.nativeElement.currentTime = 0;
     this.activeSong=toSong;
