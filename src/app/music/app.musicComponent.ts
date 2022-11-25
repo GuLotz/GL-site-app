@@ -1,9 +1,6 @@
 import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
 import { song } from './song.model';
 
-import { Observable } from 'rxjs';
-import { fromPromise } from 'rxjs/internal-compatibility';
-
 @Component({
   selector: 'app-music',
   templateUrl: 'music.html'
@@ -79,10 +76,18 @@ export class musicComponent implements OnInit {
   }
 
   readSongList() {
-    fetch('assets/songs/songs.json').then(res => res.json()).then(data => { this.songs = data; console.log("song list fetched"); /*console.log(this.songs)*/ });
-    if (this.activeSong >= this.songs.length) {
-      this.activeSong = 0;
-    }
+    return new Promise((resolve, reject) => {
+      fetch('assets/songs/songs.json').then(res => res.json()).then(data => {
+        this.songs = data;
+        console.log("song list fetched");
+        //console.log(this.songs)
+      }).then(() => {
+        if (this.activeSong >= this.songs.length) {
+          this.activeSong = 0;
+        }
+        resolve(true);
+      })
+    })
   }
 
   ngAfterViewInit(){
@@ -95,79 +100,90 @@ export class musicComponent implements OnInit {
   }
 
   //playAudio(myPlayer: HTMLAudioElement){
-  playAudio(){
-    if (this.playMode==='playing'){
-      this.playMode='pausing';
-      this.myPlayer.nativeElement.pause();
-      console.log('Button Action: pause');
-    }
-    else{
-      if (this.playMode==='pausing'){
-        this.playMode='playing';
-        this.myPlayer.nativeElement.play();
-        console.log('Button Action: play song number' + this.activeSong + " " + this.songs[this.activeSong].title);
+  playAudio() {
+      if (this.playMode === 'playing') {
+        this.playMode = 'pausing';
+        this.myPlayer.nativeElement.pause();
+        console.log('Button Action: pause');
       }
-      else{
-        console.log('wrong content of variable playmode:' + this.playMode);
+      else {
+        if (this.playMode === 'pausing') {
+          this.readSongList().then(() => {
+            this.playMode = 'playing';
+            this.myPlayer.nativeElement.play();
+            console.log('Button Action: play song number ' + this.activeSong + " : " + this.songs[this.activeSong].title);
+          })
+        }
+        else {
+          console.log('wrong content of variable playmode:' + this.playMode);
+        }
       }
-    }
   }
+
   stopAudio(){
     //var myPlayer:any = document.getElementById("audioPlayer");
-    this.playMode='pausing';
+    this.playMode = 'pausing';
     this.myPlayer.nativeElement.pause();
     this.myPlayer.nativeElement.currentTime = 0;
     console.log('Button Action: stop');
   }
+
   goToPreviousSong(){
     //var myPlayer:any = document.getElementById("audioPlayer");
-    this.readSongList();
-    this.playMode='playing';
-    this.activeSong-=1;
+    this.readSongList().then(() => {
+      this.playMode = 'playing';
+      this.activeSong -= 1;
 
-    if (this.activeSong==-1){
-      this.activeSong = this.songs.length-1;
-    }
-    this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
-    this.myPlayer.nativeElement.currentTime = 0;
-    this.myPlayer.nativeElement.play();
-    console.log('Button Action: previous. Playing song number ' + this.activeSong);
+      if (this.activeSong == -1) {
+        this.activeSong = this.songs.length - 1;
+      }
+      this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
+      this.myPlayer.nativeElement.currentTime = 0;
+      this.myPlayer.nativeElement.play();
+      console.log('Button Action: previous. Playing song number ' + this.activeSong);
+    })
   }
-  goToNextSong(){
+  goToNextSong() {
     //var myPlayer:any = document.getElementById("audioPlayer");
-    this.readSongList();
-    this.playMode='playing';
-    this.activeSong+=1;
-    if (this.activeSong==this.songs.length){
-      this.activeSong=0;
-    }
-    this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
-    this.myPlayer.nativeElement.currentTime = 0;
-    this.myPlayer.nativeElement.play();
-    console.log('Button Action: next. Playing song number ' + this.activeSong);
+    this.readSongList().then(() => {
+      this.playMode = 'playing';
+      this.activeSong += 1;
+      if (this.activeSong == this.songs.length) {
+        this.activeSong = 0;
+      }
+      this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
+      this.myPlayer.nativeElement.currentTime = 0;
+      this.myPlayer.nativeElement.play();
+      console.log('Button Action: next. Playing song number ' + this.activeSong);
+    })
   }
+
   songHasEnded(){
     //var myPlayer:any = document.getElementById("audioPlayer");
-    this.readSongList();
-    this.playMode='playing';
-    this.activeSong+=1;
-    if (this.activeSong==this.songs.length){
-      this.activeSong=0;
-    }
-    this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
-    this.myPlayer.nativeElement.currentTime = 0;
-    this.myPlayer.nativeElement.play();
-    console.log('Song has ended. Progressing to next song. ' + this.activeSong);
+    this.readSongList().then(() => {
+      this.playMode = 'playing';
+      this.activeSong += 1;
+      if (this.activeSong == this.songs.length) {
+        this.activeSong = 0;
+      }
+      this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
+      this.myPlayer.nativeElement.currentTime = 0;
+      this.myPlayer.nativeElement.play();
+      console.log('Song has ended 3. Progressing to next song. ' + this.activeSong);
+    })
   }
+
   changeSong(toSong: number) {
-    this.readSongList();
-    this.playMode='playing';
-    this.myPlayer.nativeElement.currentTime = 0;
-    this.activeSong=toSong;
-    this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
-    this.myPlayer.nativeElement.play();
+    this.readSongList().then(() => {
+      this.playMode = 'playing';
+      this.myPlayer.nativeElement.currentTime = 0;
+      this.activeSong = toSong;
+      this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
+      this.myPlayer.nativeElement.play();
+    })
   }
-  progressBarClicked(mouse: any){ // I would have wanted to use MouseEvent, but that does not know its properties and gives compilation errors
+
+  progressBarClicked(mouse: any) { // I would have wanted to use MouseEvent, but that does not know its properties and gives compilation errors
     var percentPlayed: number;
     var progressBarWidth: number;
     console.log('Progressbar was clicked');
