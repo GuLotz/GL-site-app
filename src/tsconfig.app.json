@@ -5,12 +5,12 @@
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "lib": [
-      "es2016",
+      "esnext",
       "dom"
     ],
     "outDir": "../out-tsc/app",
-    "target": "es2015",
-    "module": "es2020",
+    "target": "esnext",
+    "module": "esnext",
     "baseUrl": "/angular/",
     "types": [ "node" ],
     "typeRoots": [ "../node_modules/@types" ],

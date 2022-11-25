@@ -1,26 +1,18 @@
-import { Component, ViewChild, AfterViewInit  } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { Component, ViewChild, AfterViewInit, OnInit  } from '@angular/core';
 import { song } from './song.model';
-import * as songlist from "../../assets/songs/songs.json";
-import {Observable} from 'rxjs';
-import { fromPromise } from 'rxjs/internal-compatibility';
 
 @Component({
   selector: 'app-music',
   templateUrl: 'music.html'
 })
 
-export class musicComponent {
+export class musicComponent implements OnInit {
   @ViewChild('audioPlayer', { static: true }) myPlayer;
 
   playMode:string ='pausing';
 
   progress:string ='0%';
-  songs = require('../../assets/songs/songs.json');
-  songs2 = this.songs;
-
-  dataJson: Observable<unknown>;
-  dynamicallyLoadJsonFile = import('../../assets/songs/songs.json');
+  songs: Array<song> = require('../../assets/songs/songs.json');
 
 /*
   songs: song[]=[
@@ -70,13 +62,14 @@ export class musicComponent {
   activeSong: number;
 
   constructor(){
-    this.activeSong=0;
+    this.activeSong = 0;
   }
 
-  async ngOnInit(){
-    this.dataJson = fromPromise(this.dynamicallyLoadJsonFile);
-    console.log(this.dataJson);
-    this.dataJson.subscribe(data => { this.songs2 = data })
+  async ngOnInit() {
+    await import("../../assets/songs/songs.json").then(data => {
+      this.songs = data['default'];
+      console.log(this.songs);
+    });
   }
 
   ngAfterViewInit(){
@@ -160,7 +153,8 @@ export class musicComponent {
     this.myPlayer.nativeElement.play();
     console.log('Song has ended. Progressing to next song. ' + this.activeSong);
   }
-  changeSong(toSong: number){
+  changeSong(toSong: number) {
+    this.ngOnInit();
     this.playMode='playing';
     this.myPlayer.nativeElement.currentTime = 0;
     this.activeSong=toSong;

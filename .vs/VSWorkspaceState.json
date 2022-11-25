@@ -3,8 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\meMyselfAndI"
+    "\\src\\app\\music",
+    "\\src\\assets",
+    "\\src\\assets\\songs"
   ],
-  "SelectedNode": "\\src\\app\\meMyselfAndI\\meMyselfAndI.html",
+  "SelectedNode": "\\src\\assets\\songs\\songs.json",
   "PreviewInSolutionExplorer": false
 }
