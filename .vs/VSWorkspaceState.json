@@ -3,10 +3,8 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\music",
-    "\\src\\assets",
-    "\\src\\assets\\songs"
+    "\\src\\app\\header"
   ],
-  "SelectedNode": "\\src\\assets\\songs\\songs.json",
+  "SelectedNode": "\\src\\app\\app.component.ts",
   "PreviewInSolutionExplorer": false
 }
