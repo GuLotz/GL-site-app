@@ -30,7 +30,7 @@ import { audioExperimentsComponent } from './audio-experiments/audio-experiments
     HttpClientModule,
     appRouting,
     ReactiveFormsModule,
-    NgbModule.forRoot(),
+    NgbModule
   ],
   declarations: [ AppComponent,
                   routingComponents,

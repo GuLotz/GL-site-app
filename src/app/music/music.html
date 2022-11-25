@@ -1,40 +1,40 @@
 
 
-  <h1>Gunnar's Music</h1>
-  <div class="container" style="width:210px; height:40px; padding-left:18px; padding-right:18px; text-align: center;">
-    <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px" (click)='goToPreviousSong()'>
-      <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
-    </button>
-    <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px" (click)='playAudio()'>
-      <span [ngClass]="(playMode==='pausing')?'glyphicon glyphicon-play':'glyphicon glyphicon-pause'" aria-hidden="true"></span>
-    </button>
-    <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px" (click)='stopAudio()'>
-      <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
-    </button>
-    <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px" (click)='goToNextSong()'>
-      <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
-    </button>
-    <div class="progress" style="height:5px;" (click)='progressBarClicked($event)' id="musicProgressBar">
-      <div class="progress-bar"
-           role="progressbar"
-           style="height:5px;"
-           [ngStyle]="{'width': progress}"
-           aria-valuenow="0"
-           aria-valuemin="0"
-           aria-valuemax="100"
-           >
-      </div>
+<h1>Gunnar's Music</h1>
+<div class="container" style="width:210px; height:40px; padding-left:18px; padding-right:18px; text-align: center;">
+  <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px" (click)='goToPreviousSong()'>
+    <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+  </button>
+  <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px" (click)='playAudio()'>
+    <span [ngClass]="(playMode==='pausing')?'glyphicon glyphicon-play':'glyphicon glyphicon-pause'" aria-hidden="true"></span>
+  </button>
+  <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px" (click)='stopAudio()'>
+    <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
+  </button>
+  <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px" (click)='goToNextSong()'>
+    <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
+  </button>
+  <div class="progress" style="height:5px;" (click)='progressBarClicked($event)' id="musicProgressBar">
+    <div class="progress-bar"
+         role="progressbar"
+         style="height:5px;"
+         [ngStyle]="{'width': progress}"
+         aria-valuenow="0"
+         aria-valuemin="0"
+         aria-valuemax="100">
     </div>
   </div>
-  <hr>
-  <p>
-    <audio #audioPlayer>
-      <source src={{songs[activeSong].path}} type="audio/mp3">
-      <em class="error"><strong>Error:</strong> Your browser doesn't appear to support HTML5 Audio.</em>
-    </audio>
-  </p>
+</div>
+<hr>
+<p>
+  <audio #audioPlayer>
+    <source src={{songs[activeSong].path}} type="audio/mp3">
+    <em class="error"><strong>Error:</strong> Your browser doesn't appear to support HTML5 Audio.</em>
+  </audio>
+</p>
 
-  <div class="container-fluid" style="overflow-y:scroll;height:48vh;">
+
+<div class="container-fluid" style="overflow-y:scroll;height:48vh;">
     <table>
         <tbody>
             <tr *ngFor="let song of songs" [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'">
@@ -46,4 +46,18 @@
         </tbody>
     </table>
   </div>
- 
+
+<!--
+  <ng-container *ngIf="dataJson | async as data">
+    <div class="container-fluid" style="overflow-y:scroll;height:48vh;">
+      <table>
+        <tbody>
+          <tr *ngFor="let song of songs" [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'">
+            <td> {{song.id }} </td>
+            <td><div (click)='changeSong(song.id-1)'>{{song.title}}</div></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+  </ng-container>
+-->
