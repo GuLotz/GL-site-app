@@ -17,10 +17,11 @@ export class musicComponent implements OnInit {
   progress:string ='0%';
   //songs: Array<song> = require('../../assets/songs/songs.json');
   songs: Array<song> = [new song(1, 'Guitar Rock', 'assets/songs/GunAudio5b.mp3')];
-
+  songs2: any;
+  /*
   dataJson: Observable<unknown>;
   dynamicallyLoadJsonFile = import('../../assets/songs/songs.json');
-
+  */
 /*
   songs: song[]=[
     new song( 1, 'Guitar Rock', 'assets/songs/GunAudio5b.mp3'),
@@ -74,39 +75,23 @@ export class musicComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.dataJson = fromPromise(this.dynamicallyLoadJsonFile);
     this.readSongList();
   }
+
   readSongList() {
-    this.sub = this.dataJson.subscribe((data) => {
-      this.songs = data['default'];
-      //console.log(this.songs);
-      this.sub.unsubscribe()
-    })
-    /*await import("../../assets/songs/songs.json").then(data => {
-      this.songs = data['default'];
-      console.log(this.songs);
-    });
-    */
+    fetch('assets/songs/songs.json').then(res => res.json()).then(data => { this.songs = data; console.log("song list fetched"); /*console.log(this.songs)*/ });
+    if (this.activeSong >= this.songs.length) {
+      this.activeSong = 0;
+    }
   }
 
   ngAfterViewInit(){
-    this.myPlayer.nativeElement.onended=()=>{
-      this.playMode='playing';
-      this.activeSong+=1;
-      if (this.activeSong==this.songs.length){
-        this.activeSong=0;
-      }
-      this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
-      this.myPlayer.nativeElement.currentTime = 0;
-      this.myPlayer.nativeElement.play();
-    }
+    this.myPlayer.nativeElement.onended = () => this.songHasEnded();
 
     this.myPlayer.nativeElement.ontimeupdate=()=>{
       this.progress=this.myPlayer.nativeElement.currentTime/this.myPlayer.nativeElement.duration*100 + "%";
       //console.log('timeupdate: progress: ' + this.progress);
     }
-
   }
 
   //playAudio(myPlayer: HTMLAudioElement){
@@ -136,6 +121,7 @@ export class musicComponent implements OnInit {
   }
   goToPreviousSong(){
     //var myPlayer:any = document.getElementById("audioPlayer");
+    this.readSongList();
     this.playMode='playing';
     this.activeSong-=1;
 
@@ -149,6 +135,7 @@ export class musicComponent implements OnInit {
   }
   goToNextSong(){
     //var myPlayer:any = document.getElementById("audioPlayer");
+    this.readSongList();
     this.playMode='playing';
     this.activeSong+=1;
     if (this.activeSong==this.songs.length){
@@ -161,6 +148,7 @@ export class musicComponent implements OnInit {
   }
   songHasEnded(){
     //var myPlayer:any = document.getElementById("audioPlayer");
+    this.readSongList();
     this.playMode='playing';
     this.activeSong+=1;
     if (this.activeSong==this.songs.length){
