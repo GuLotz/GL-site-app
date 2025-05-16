@@ -13,58 +13,9 @@ export class musicComponent implements OnInit {
   playMode:string ='pausing';
 
   progress:string ='0%';
-  //songs: Array<song> = require('../../assets/songs/songs.json');
-  songs: Array<song> = [new song(1, 'Guitar Rock', 'assets/songs/GunAudio5b.mp3')];
-  songs2: any;
-  /*
-  dataJson: Observable<unknown>;
-  dynamicallyLoadJsonFile = import('../../assets/songs/songs.json');
-  */
-/*
-  songs: song[]=[
-    new song( 1, 'Guitar Rock', 'assets/songs/GunAudio5b.mp3'),
-    new song( 2, 'Gritty Organ', 'assets/songs/QS8.2_018.mp3'),
-    new song( 3, "Ceci n'est pas une Pipe",'assets/songs/Pipe_Organ_1.mp3'),
-    new song( 4, "Experiment with Cakewalk's Z3tA+",'assets/songs/SoftSynth003.mp3'),
-    new song( 5, 'Number 19','assets/songs/Number 19.mp3'),
-    new song( 6, 'Number 22','assets/songs/QS8.2_022.mp3'),
-    new song( 7, 'Number 23','assets/songs/QS8.2_023.mp3'),
-    new song( 8, 'Number 24','assets/songs/QS8.2_024.mp3'),
-    new song( 9, 'Number 26','assets/songs/Song 26.mp3'),
-    new song(10, 'Number 27','assets/songs/Song 27.mp3'),
-    new song(11, 'Technical No. 28','assets/songs/Song 28.mp3'),
-    new song(12, 'Technical No. 28b','assets/songs/Song 28b.mp3'),
-    new song(13, 'Technical No. 28c','assets/songs/Song 28c.mp3'),
-    new song(14, 'Number 29','assets/songs/Song 29.mp3'),
-    new song(15, 'Livingroom-001', 'assets/songs/Livingroom-001.mp3'),
-    //new song(15.5, 'Livingroom-001b', 'assets/songs/Livingroom-001b.mp3'),
-    new song(16, 'Livingroom-001_with bass and organ', 'assets/songs/Livingroom-001_with bass and organ.mp3'),
-    new song(17, 'Livingroom-002', 'assets/songs/Livingroom-002.mp3'),
-    new song(18, "Pia's favourite", 'assets/songs/Pias_Favourite.mp3'),
-    new song(19, '1995-2016 (Song 13)','assets/songs/1995-2016_13.mp3'),
-    new song(20, '1995-2016 (Song 15)','assets/songs/1995-2016-15_CD-Format.mp3'),
-    new song(21, '2016 (Song 31)','assets/songs/QS8.2_31_CD-Format.mp3'),
-    new song(22, 'Now for something completely different (Song 54)','assets/songs/Simple54_Klass-CD.mp3'),
-    new song(23, '1997-2016 (Number 50)','assets/songs/1997-2016_50.mp3'),
-    new song(24, 'Living Room 003 (The piano timing will make Pachelbel turn in his grave)','assets/songs/Livingroom003_a.mp3'),
-    new song(25, 'Up Beat Number 34','assets/songs/QS8.2_34.mp3'),
-    new song(26, 'Number 35','assets/songs/QS8.2_35.mp3'),
-    new song(27, 'Number 37','assets/songs/QS8.2_37b.mp3'),
-    new song(28, 'Number 39','assets/songs/QS8.2-39.mp3'),
-    new song(29, 'Number 40','assets/songs/Song_40.mp3'),
-    new song(30, '2019-001-2','assets/songs/2019-001-2.mp3'),
-    new song(31, '2021-12-27 Between Years, between jobs', 'assets/songs/2021-12-27.mp3'),
-    new song(32, '2022-01-16 Whom were you thinking of, she asked', 'assets/songs/2022-01-16.mp3'),
-    new song(33, '2022-02-05 New drums on the drive', 'assets/songs/2022-02-05.mp3'),
-    new song(34, '2022-02-08 Horny trombones', 'assets/songs/2022-02-08.mp3'),
-    new song(35, '2022-02-12 Low Flyer', 'assets/songs/2022-02-12.mp3'),
-    new song(36, '2022-10-23', 'assets/songs/2022-10-23.mp3'),
-    new song(37, "2022-11-04 Marianne's birthday song", 'assets/songs/2022-11-04.mp3')
 
-    //new song(14, '','assets/songs/'),
-    //new song(14, '','assets/songs/'),
-  ];
-*/
+  songs: Array<song> = [new song(1, 'Guitar Rock', 'assets/songs/GunAudio5b.mp3', 0)];
+
   activeSong: number;
   sub: any;
 
@@ -72,27 +23,45 @@ export class musicComponent implements OnInit {
     this.activeSong = 0;
   }
 
+  //async ngOnInit() {
+  //  this.readSongList();
+  //}
+
+  //readSongList() {
+  //  return new Promise((resolve, reject) => {
+  //    fetch('assets/songs/songs.json').then(res => res.json()).then(data => {
+  //      this.songs = data;
+  //      console.log("song list fetched");
+  //      //console.log(this.songs)
+  //    }).then(() => {
+  //      if (this.activeSong >= this.songs.length) {
+  //        this.activeSong = 0;
+  //      }
+  //      resolve(true);
+  //    })
+  //  })
+  //}
+
   async ngOnInit() {
-    this.readSongList();
+    this.updateSongList()
   }
 
-  readSongList() {
+  async updateSongList() {
+    this.getSongList().then(data => this.songs = data).then(() => { for (let i = 0; i < this.songs.length; i++){this.getSongLikes(this.songs[i].id).then(likes=>this.songs[i].likes=likes) } });
+  }
+
+  getSongList():Promise<song[]> {
     return new Promise((resolve, reject) => {
-      fetch('assets/songs/songs.json').then(res => res.json()).then(data => {
-        this.songs = data;
-        console.log("song list fetched");
-        //console.log(this.songs)
-      }).then(() => {
-        if (this.activeSong >= this.songs.length) {
-          this.activeSong = 0;
-        }
-        resolve(true);
-      })
+      fetch('assets/songs/songs.json')
+        .then(res => resolve(res.json()))
+        .catch(error => reject(error))
     })
   }
 
-  getSongLikes(song: string) {
-    return new Promise((resolve, reject) => { resolve(10) })
+  getSongLikes(song: number):Promise<number> {
+    return new Promise((resolve, reject) => {
+      fetch('assets/php/api.php?SongID=' + song).then(res => resolve(res.json()))
+    })
   }
 
   ngAfterViewInit(){
@@ -113,7 +82,7 @@ export class musicComponent implements OnInit {
       }
       else {
         if (this.playMode === 'pausing') {
-          this.readSongList().then(() => {
+          this.updateSongList().then(() => {
             this.playMode = 'playing';
             this.myPlayer.nativeElement.play();
             console.log('Button Action: play song number ' + this.activeSong + " : " + this.songs[this.activeSong].title);
@@ -135,7 +104,7 @@ export class musicComponent implements OnInit {
 
   goToPreviousSong(){
     //var myPlayer:any = document.getElementById("audioPlayer");
-    this.readSongList().then(() => {
+    this.updateSongList().then(() => {
       this.playMode = 'playing';
       this.activeSong -= 1;
 
@@ -150,7 +119,7 @@ export class musicComponent implements OnInit {
   }
   goToNextSong() {
     //var myPlayer:any = document.getElementById("audioPlayer");
-    this.readSongList().then(() => {
+    this.updateSongList().then(() => {
       this.playMode = 'playing';
       this.activeSong += 1;
       if (this.activeSong == this.songs.length) {
@@ -165,7 +134,7 @@ export class musicComponent implements OnInit {
 
   songHasEnded(){
     //var myPlayer:any = document.getElementById("audioPlayer");
-    this.readSongList().then(() => {
+    this.updateSongList().then(() => {
       this.playMode = 'playing';
       this.activeSong += 1;
       if (this.activeSong == this.songs.length) {
@@ -179,7 +148,7 @@ export class musicComponent implements OnInit {
   }
 
   changeSong(toSong: number) {
-    this.readSongList().then(() => {
+    this.updateSongList().then(() => {
       this.playMode = 'playing';
       this.myPlayer.nativeElement.currentTime = 0;
       this.activeSong = toSong;
@@ -203,8 +172,3 @@ export class musicComponent implements OnInit {
   }
 }
 
-// export interface song {
-//     id: number,
-//     title: string,
-//     path: string
-// };

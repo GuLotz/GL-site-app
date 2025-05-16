@@ -230,6 +230,14 @@ td {
   padding-left: 4pt;
 }
 
+th {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #3060A0;
+  vertical-align: top;
+  padding-right: 4pt;
+  padding-left: 4pt;
+}
+
 .background-pane {
   background-color: #5098C0;
   padding: 0px 0px 0px 0px;

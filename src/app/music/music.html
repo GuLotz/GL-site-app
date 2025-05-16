@@ -36,11 +36,21 @@
 
 <div class="container-fluid" style="overflow-y:scroll;height:48vh;">
     <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Song</th>
+            <th>Likes</th>
+          </tr>
+        </thead>
         <tbody>
             <tr *ngFor="let song of songs" [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'">
                 <td style="width:26px;"> {{song.id }} </td>
                 <td>
                   <div (click)='changeSong(song.id-1)'>{{song.title}}</div>
+                </td>
+                <td>
+                  <div>{{song.likes}}</div>
                 </td>
             </tr>
         </tbody>
