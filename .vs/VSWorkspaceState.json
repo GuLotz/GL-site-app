@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\src",
-    "\\src\\app",
-    "\\src\\app\\music",
-    "\\src\\assets"
+    ""
   ],
-  "SelectedNode": "\\src\\app\\music\\app.musicComponent.ts",
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }

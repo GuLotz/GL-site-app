@@ -18,10 +18,12 @@
 
 # IDE - VSCode
 .vscode/*
+
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+.vs/*
 .vs
 
 # misc
@@ -35,6 +37,8 @@
 npm-debug.log
 testem.log
 /typings
+package-lock.json
+.gitignore
 
 # e2e
 /e2e/*.js
@@ -43,3 +47,6 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
+
+#files with credentials
+/src/assets/php/db.php

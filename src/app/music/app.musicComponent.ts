@@ -1,5 +1,6 @@
 import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
 import { song } from './song.model';
+import { resolve } from 'dns';
 
 @Component({
   selector: 'app-music',
@@ -88,6 +89,10 @@ export class musicComponent implements OnInit {
         resolve(true);
       })
     })
+  }
+
+  getSongLikes(song: string) {
+    return new Promise((resolve, reject) => { resolve(10) })
   }
 
   ngAfterViewInit(){
