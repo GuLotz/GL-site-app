@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -22,28 +22,21 @@ import { contentComponent }  from './content/app.contentComponent';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { audioExperimentsComponent } from './audio-experiments/audio-experiments.component';
 
-@NgModule({
-  imports: [
-    BrowserModule,
-    HammerModule,
-    FormsModule,
-    HttpClientModule,
-    appRouting,
-    ReactiveFormsModule,
-    NgbModule
-  ],
-  declarations: [ AppComponent,
-                  routingComponents,
-                  navigationComponent,
-                  headerComponent,
-                  homeComponent,
-                  contentComponent,
-                  musicComponent,
-                  meMyselfAndIComponent,
-                  imprintComponent,
-                  audioExperimentsComponent
-                ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [AppComponent,
+        routingComponents,
+        navigationComponent,
+        headerComponent,
+        homeComponent,
+        contentComponent,
+        musicComponent,
+        meMyselfAndIComponent,
+        imprintComponent,
+        audioExperimentsComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        HammerModule,
+        FormsModule,
+        appRouting,
+        ReactiveFormsModule,
+        NgbModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
