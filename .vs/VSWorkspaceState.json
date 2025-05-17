@@ -1,7 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\dist",
+    "\\dist\\assets",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\music",
+    "\\src\\assets",
+    "\\src\\assets\\php"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\src\\assets\\php\\api.php",
   "PreviewInSolutionExplorer": false
 }
