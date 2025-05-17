@@ -3,9 +3,10 @@ import { Router, ActivatedRoute, NavigationEnd } from "@angular/router";
 import { appRoutes } from "../routing/app.routing";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: 'header.html',
-  inputs: ['headerTitle']
+    selector: 'app-header',
+    templateUrl: 'header.html',
+    inputs: ['headerTitle'],
+    standalone: false
 })
 
 export class headerComponent{

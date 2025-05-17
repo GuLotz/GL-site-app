@@ -3,9 +3,10 @@ import { Component, OnInit } from '@angular/core';
 //import { swipe } from '../app.component';
 
 @Component({
-  selector: 'app-audio-experiments',
-  templateUrl: './audio-experiments.component.html',
-  styleUrls: ['./audio-experiments.component.css']
+    selector: 'app-audio-experiments',
+    templateUrl: './audio-experiments.component.html',
+    styleUrls: ['./audio-experiments.component.css'],
+    standalone: false
 })
 
 export class audioExperimentsComponent implements OnInit {

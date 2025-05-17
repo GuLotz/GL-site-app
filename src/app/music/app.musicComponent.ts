@@ -3,8 +3,9 @@ import { song } from './song.model';
 import { resolve } from 'dns';
 
 @Component({
-  selector: 'app-music',
-  templateUrl: 'music.html'
+    selector: 'app-music',
+    templateUrl: 'music.html',
+    standalone: false
 })
 
 export class musicComponent implements OnInit {

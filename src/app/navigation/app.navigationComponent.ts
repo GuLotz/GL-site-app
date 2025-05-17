@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { appRoutes } from '../routing/app.routing';
 
 @Component({
-  selector: 'app-navigation',
-  templateUrl: 'navigation.html'
+    selector: 'app-navigation',
+    templateUrl: 'navigation.html',
+    standalone: false
 })
 
 export class navigationComponent {
