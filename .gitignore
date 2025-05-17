@@ -24,6 +24,7 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 .vs/*
+.vs/*.*
 .vs
 
 # misc
@@ -50,3 +51,6 @@ Thumbs.db
 
 #files with credentials
 /src/assets/php/db.php
+/.vs/VSWorkspaceState.json
+/.gitignore
+/.gitignore
