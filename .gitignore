@@ -25,6 +25,7 @@
 !.vscode/extensions.json
 .vs/*
 .vs/*.*
+.vs/slnx.sqlite
 .vs
 
 # misc
