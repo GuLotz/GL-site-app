@@ -24,25 +24,6 @@ export class musicComponent implements OnInit {
     this.activeSong = 0;
   }
 
-  //async ngOnInit() {
-  //  this.readSongList();
-  //}
-
-  //readSongList() {
-  //  return new Promise((resolve, reject) => {
-  //    fetch('assets/songs/songs.json').then(res => res.json()).then(data => {
-  //      this.songs = data;
-  //      console.log("song list fetched");
-  //      //console.log(this.songs)
-  //    }).then(() => {
-  //      if (this.activeSong >= this.songs.length) {
-  //        this.activeSong = 0;
-  //      }
-  //      resolve(true);
-  //    })
-  //  })
-  //}
-
   async ngOnInit() {
     this.updateSongList()
   }

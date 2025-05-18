@@ -1,13 +1,15 @@
 [
   {
     "id": 1,
+    "uuid": "74f9edf1-1229-4132-8668-27f753dac086",
     "title": "Guitar Rock",
     "path": "assets/songs/GunAudio5b.mp3",
-    "duration":  "01:53",
-    "likes":  0
+    "duration": "01:53",
+    "likes": 0
   },
   {
     "id": 2,
+    "uuid": "084daa22-dd4f-42ff-9711-f6dc5db29498",
     "title": "Gritty Organ",
     "path": "assets/songs/QS8.2_018_Bandlabs.mp3",
     "duration": "02:24",
@@ -15,6 +17,7 @@
   },
   {
     "id": 3,
+    "uuid": "f7c0a85e-fa46-4309-b2ec-6a0936bf5f25",
     "title": "Ceci n'est pas une Pipe",
     "path": "assets/songs/Pipe_Organ_1.mp3",
     "duration": "01:57",
@@ -22,6 +25,7 @@
   },
   {
     "id": 4,
+    "uuid": "f06f8b33-6fc4-44f0-9d60-83f0cf56c685",
     "title": "Experiment with Cakewalk's Z3tA+",
     "path": "assets/songs/SoftSynth003_X3.mp3",
     "duration": "02:55",
@@ -29,6 +33,7 @@
   },
   {
     "id": 5,
+    "uuid": "b028fc81-9dc2-463f-91d6-3bba23433743",
     "title": "Number 19",
     "path": "assets/songs/Number 19.mp3",
     "duration": "02:27",
@@ -36,6 +41,7 @@
   },
   {
     "id": 6,
+    "uuid": "2d4bdf74-791a-4d44-a958-73e2f0917794",
     "title": "Number 22",
     "path": "assets/songs/QS8.2_022.mp3",
     "duration": "04:40",
@@ -43,6 +49,7 @@
   },
   {
     "id": 7,
+    "uuid": "d525dc50-f837-414b-a3c5-476bca5ac99f",
     "title": "Number 23",
     "path": "assets/songs/QS8.2_023.mp3",
     "duration": "02:48",
@@ -50,6 +57,7 @@
   },
   {
     "id": 8,
+    "uuid": "951f6eb3-f089-4a97-b595-938fc2432a4c",
     "title": "Number 24",
     "path": "assets/songs/QS8.2_024.mp3",
     "duration": "02:48",
@@ -57,6 +65,7 @@
   },
   {
     "id": 9,
+    "uuid": "cf634342-6558-463c-ae77-2eeaa96e15db",
     "title": "Number 26",
     "path": "assets/songs/Song 26.mp3",
     "duration": "03:04",
@@ -64,6 +73,7 @@
   },
   {
     "id": 10,
+    "uuid": "cc96775e-d5d1-4616-ae8b-934516523fe7",
     "title": "Number 27",
     "path": "assets/songs/Song 27.mp3",
     "duration": "04:00",
@@ -71,6 +81,7 @@
   },
   {
     "id": 11,
+    "uuid": "91f5b958-17e6-4835-aa74-8dea2da442bb",
     "title": "Technical No. 28",
     "path": "assets/songs/Song 28.mp3",
     "duration": "02:15",
@@ -78,6 +89,7 @@
   },
   {
     "id": 12,
+    "uuid": "0d90fa25-cbee-46e5-87eb-3213fbd64bef",
     "title": "Technical No. 28b",
     "path": "assets/songs/Song 28b.mp3",
     "duration": "02:15",
@@ -85,6 +97,7 @@
   },
   {
     "id": 13,
+    "uuid": "fa13afa1-6eae-4227-96cf-dbf049c0b113",
     "title": "Technical No. 28c",
     "path": "assets/songs/Song 28c.mp3",
     "duration": "03:10",
@@ -92,6 +105,7 @@
   },
   {
     "id": 14,
+    "uuid": "40e4bf6d-2db2-43d7-a233-60710470676e",
     "title": "Number 29",
     "path": "assets/songs/Song 29.mp3",
     "duration": "02:56",
@@ -99,6 +113,7 @@
   },
   {
     "id": 15,
+    "uuid": "64429b08-ce5e-4126-a1e1-d82d6087c71e",
     "title": "Livingroom-001",
     "path": "assets/songs/Livingroom-001.mp3",
     "duration": "02:07",
@@ -106,6 +121,7 @@
   },
   {
     "id": 16,
+    "uuid": "ba659374-02ac-492d-aa76-9b335007c886",
     "title": "Livingroom-001_with bass and organ",
     "path": "assets/songs/Livingroom-001_with bass and organ.mp3",
     "duration": "02:07",
@@ -113,6 +129,7 @@
   },
   {
     "id": 17,
+    "uuid": "6535e39a-6e17-41ca-a7d4-7209edc17fb9",
     "title": "Livingroom-002",
     "path": "assets/songs/Livingroom-002.mp3",
     "duration": "02:02",
@@ -120,6 +137,7 @@
   },
   {
     "id": 18,
+    "uuid": "83ab45ca-3c94-4b5a-afc8-c51b667c50bb",
     "title": "Pia's favourite",
     "path": "assets/songs/Pias_Favourite.mp3",
     "duration": "02:39",
@@ -127,6 +145,7 @@
   },
   {
     "id": 19,
+    "uuid": "490b1aea-0334-4665-96a0-244f0ef49e14",
     "title": "1995-2016 (Song 13)",
     "path": "assets/songs/1995-2016_13.mp3",
     "duration": "04:04",
@@ -134,6 +153,7 @@
   },
   {
     "id": 20,
+    "uuid": "d338f6b6-9d44-4eaf-80d8-6f2adeb2f569",
     "title": "1995-2016 (Song 15)",
     "path": "assets/songs/1995-2016-15_CD-Format.mp3",
     "duration": "05:08",
@@ -141,6 +161,7 @@
   },
   {
     "id": 21,
+    "uuid": "805642fc-2626-47b4-a544-0d03a608412b",
     "title": "2016 (Song 31)",
     "path": "assets/songs/QS8.2_31_CD-Format.mp3",
     "duration": "03:07",
@@ -148,6 +169,7 @@
   },
   {
     "id": 22,
+    "uuid": "54528e29-2efb-489a-9d17-32baaba2cb0d",
     "title": "Now for something completely different (Song 54)",
     "path": "assets/songs/Simple54_Klass-CD.mp3",
     "duration": "01:06",
@@ -155,6 +177,7 @@
   },
   {
     "id": 23,
+    "uuid": "5c7c5046-8102-4e19-90ce-c04d059424cc",
     "title": "1997-2016 (Number 50)",
     "path": "assets/songs/1997-2016_50.mp3",
     "duration": "03:20",
@@ -162,6 +185,7 @@
   },
   {
     "id": 24,
+    "uuid": "a726df8c-1736-4a99-aec3-9885a64184e8",
     "title": "Living Room 003 (The piano timing will make Pachelbel turn in his grave)",
     "path": "assets/songs/Livingroom003_a.mp3",
     "duration": "04:02",
@@ -169,6 +193,7 @@
   },
   {
     "id": 25,
+    "uuid": "b8cdbff6-6619-482e-ad2e-c1cb03f63057",
     "title": "Up Beat Number 34",
     "path": "assets/songs/QS8.2_34.mp3",
     "duration": "02:39",
@@ -176,6 +201,7 @@
   },
   {
     "id": 26,
+    "uuid": "6d0bdcf5-aee0-4096-96a3-ef924e70497e",
     "title": "Number 35",
     "path": "assets/songs/QS8.2_35.mp3",
     "duration": "03:02",
@@ -183,6 +209,7 @@
   },
   {
     "id": 27,
+    "uuid": "9bf29146-5b40-467d-9af2-64bc9188b49a",
     "title": "Number 37",
     "path": "assets/songs/QS8.2_37b.mp3",
     "duration": "04:40",
@@ -190,6 +217,7 @@
   },
   {
     "id": 28,
+    "uuid": "ce6c16fd-a91f-4861-adc3-0a5befe4e020",
     "title": "Number 39",
     "path": "assets/songs/QS8.2-39.mp3",
     "duration": "03:19",
@@ -197,6 +225,7 @@
   },
   {
     "id": 29,
+    "uuid": "972fc659-3939-47d2-a38f-b015913f4ebf",
     "title": "Number 40",
     "path": "assets/songs/Song_40.mp3",
     "duration": "01:39",
@@ -204,6 +233,7 @@
   },
   {
     "id": 30,
+    "uuid": "b8370567-b67d-4613-8493-efd88dce06d3",
     "title": "2019-001-2",
     "path": "assets/songs/2019-001-2.mp3",
     "duration": "02:22",
@@ -211,6 +241,7 @@
   },
   {
     "id": 31,
+    "uuid": "09771f2e-4fbc-491b-b19e-c896ac5faf85",
     "title": "2021-12-27 Between Years, between jobs",
     "path": "assets/songs/2021-12-27.mp3",
     "duration": "02:48",
@@ -218,6 +249,7 @@
   },
   {
     "id": 32,
+    "uuid": "a4e12484-c14b-4e76-94f7-742c0ad2c18f",
     "title": "2022-01-16 Whom were you thinking of, she asked",
     "path": "assets/songs/2022-01-16.mp3",
     "duration": "03:48",
@@ -225,6 +257,7 @@
   },
   {
     "id": 33,
+    "uuid": "8364a97f-2db0-42a3-9e4a-996ab2478765",
     "title": "2022-02-05 New drums on the drive",
     "path": "assets/songs/2022-02-05.mp3",
     "duration": "03:36",
@@ -232,6 +265,7 @@
   },
   {
     "id": 34,
+    "uuid": "423068c4-6f4a-4725-bc1a-300ce3766d5a",
     "title": "2022-02-08 Horny trombones",
     "path": "assets/songs/2022-02-08.mp3",
     "duration": "03:26",
@@ -239,6 +273,7 @@
   },
   {
     "id": 35,
+    "uuid": "57ac996e-a000-40de-9837-fe2a73a0c94a",
     "title": "2022-02-12 Low Flyer",
     "path": "assets/songs/2022-02-12.mp3",
     "duration": "04:02",
@@ -246,6 +281,7 @@
   },
   {
     "id": 36,
+    "uuid": "d1225d5a-1efc-44f3-a8b9-9ac3a8b2caf2",
     "title": "2022-10-23 Years gone by (4004+2022 according to James Ussher)",
     "path": "assets/songs/2022-10-23.mp3",
     "duration": "02:55",
@@ -253,6 +289,7 @@
   },
   {
     "id": 37,
+    "uuid": "f30cf472-cefa-437e-9930-2025cc429a09",
     "title": "2022-11-05 Shuffle along",
     "path": "assets/songs/2022-11-05.mp3",
     "duration": "03:24",
@@ -260,6 +297,7 @@
   },
   {
     "id": 38,
+    "uuid": "d509c460-2e9e-46d0-aecd-e65b0a628f01",
     "title": "2022-11-04 Marianne's birthday song",
     "path": "assets/songs/2022-11-04.mp3",
     "duration": "02:51",
@@ -267,6 +305,7 @@
   },
   {
     "id": 39,
+    "uuid": "bd07748d-2056-4b45-a01b-24acb0580cdd",
     "title": "2022-11-19 The BBC plays my song",
     "path": "assets/songs/2022-11-19b.mp3",
     "duration": "05:00",
@@ -274,6 +313,7 @@
   },
   {
     "id": 40,
+    "uuid": "e5daba4a-d8ad-4e16-be60-f28095c36870",
     "title": "2022-12-23 Not quite Christmas yet",
     "path": "assets/songs/2022-12-23.mp3",
     "duration": "02:30",
@@ -281,6 +321,7 @@
   },
   {
     "id": 41,
+    "uuid": "e4b822e9-abaa-4638-b4a9-f37ff7fb8732",
     "title": "2023-01-11 The music will live on, long after we're gone",
     "path": "assets/songs/2023-01-11.mp3",
     "duration": "03:00",
@@ -288,6 +329,7 @@
   },
   {
     "id": 42,
+    "uuid": "35528424-834b-48a8-a0fb-54818337710d",
     "title": "2023-01-12 No title yet",
     "path": "assets/songs/2023-01-12.mp3",
     "duration": "03:09",
@@ -295,6 +337,7 @@
   },
   {
     "id": 43,
+    "uuid": "b903a44b-3070-4887-9b7f-3f5aa53d27cd",
     "title": "2023-01-14 That's why it had to be a Duesenberg",
     "path": "assets/songs/2023-01-14.mp3",
     "duration": "05:07",
@@ -302,6 +345,7 @@
   },
   {
     "id": 44,
+    "uuid": "063cdfeb-fe1b-4bc6-b222-d2c1db656842",
     "title": "2023-07-29 Summer? What summer?",
     "path": "assets/songs/2023-07-29.mp3",
     "duration": "04:02",
@@ -309,6 +353,7 @@
   },
   {
     "id": 45,
+    "uuid": "8ebd2e40-58b0-4c31-9c23-40f1b6e496d3",
     "title": "2023-07-31 In the calm of my bubble",
     "path": "assets/songs/2023-07-31.mp3",
     "duration": "05:00",
@@ -316,6 +361,7 @@
   },
   {
     "id": 46,
+    "uuid": "645c71e6-c0e3-4dcb-a695-d63d63886b61",
     "title": "2023-12-03 What a wet December",
     "path": "assets/songs/2023-12-03.mp3",
     "duration": "02:35",
@@ -323,6 +369,7 @@
   },
   {
     "id": 47,
+    "uuid": "29e118d6-4bc4-404f-9e51-544533a3fa6a",
     "title": "2024-01-04 Resolutions",
     "path": "assets/songs/2024-01-04.mp3",
     "duration": "03:00",
@@ -330,6 +377,7 @@
   },
   {
     "id": 48,
+    "uuid": "b1829a46-06d0-4ef1-ba82-8b477f8d2e26",
     "title": "2024-01-15 Calm waters after dire straits",
     "path": "assets/songs/2024-01-15.mp3",
     "duration": "05:21",
@@ -337,6 +385,7 @@
   },
   {
     "id": 49,
+    "uuid": "7e2db658-51e3-43a0-a3ea-32b4d5f90849",
     "title": "2024-09-23 Survival Song",
     "path": "assets/songs/2024-09-23.mp3",
     "duration": "03:14",
@@ -344,6 +393,7 @@
   },
   {
     "id": 50,
+    "uuid": "d38fa6f0-763d-400d-98db-70b13c7b1d13",
     "title": "2024-10-26 Starplayer TV",
     "path": "assets/songs/2024-10-26.mp3",
     "duration": "05:00",
@@ -351,6 +401,7 @@
   },
   {
     "id": 51,
+    "uuid": "d564c9cd-6264-4ebd-8c2e-a3425b1dcaa3",
     "title": "2024-10-26 Starplayer TV laying back",
     "path": "assets/songs/2024-10-26_abends.mp3",
     "duration": "02:53",
@@ -358,6 +409,7 @@
   },
   {
     "id": 52,
+    "uuid": "91252a71-bb85-42cf-b011-126fda0667ae",
     "title": "2025-01-05 The new piano",
     "path": "assets/songs/2025-01-05.mp3",
     "duration": "03:16",
@@ -365,6 +417,7 @@
   },
   {
     "id": 53,
+    "uuid": "b4d2a295-9748-49ff-b47d-9d3197450bdb",
     "title": "2025-01-19 Roland recreated from memory",
     "path": "assets/songs/2025-01-19_Roland_aus_der_Erinnerung.mp3",
     "duration": "02:02",
@@ -372,6 +425,7 @@
   },
   {
     "id": 54,
+    "uuid": "2d5bd85a-5e0d-4044-a6b6-74eefb96b87d",
     "title": "2025-02-09 Had to be recorded at last",
     "path": "assets/songs/2025-02-09_Recorded_at_last.mp3",
     "duration": "01:42",
@@ -379,6 +433,7 @@
   },
   {
     "id": 55,
+    "uuid": "e8160f49-a966-4de0-b20f-58e63a0f9867",
     "title": "2025-02-16 Another one that waited",
     "path": "assets/songs/2025-02-16.mp3",
     "duration": "04:18",
