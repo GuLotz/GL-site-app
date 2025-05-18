@@ -15,7 +15,7 @@ export class musicComponent implements OnInit {
 
   progress:string ='0%';
 
-  songs: Array<song> = [new song(1, 'Guitar Rock', 'assets/songs/GunAudio5b.mp3', 0)];
+  songs: Array<song> //= [new song(1, 'Guitar Rock', 'assets/songs/GunAudio5b.mp3', "01:53", 0)];
 
   activeSong: number;
   sub: any;

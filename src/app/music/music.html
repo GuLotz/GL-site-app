@@ -1,6 +1,7 @@
 
 
-<h1>Gunnar's Music</h1>
+<h2>Gunnar's Music</h2>
+
 <div class="container" style="width:210px; height:40px; padding-left:18px; padding-right:18px; text-align: center;">
   <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px" (click)='goToPreviousSong()'>
     <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
@@ -25,7 +26,28 @@
     </div>
   </div>
 </div>
+<div style="margin: auto; width: 100%; padding-top:10px;">
+  <table style="margin:auto;">
+    <tr>
+      <td style="text-align: right;">
+        Now playing:
+      </td>
+      <td style="text-align: left;">
+        {{songs[activeSong].title}}
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: right;">
+        Duration: 
+      </td>
+      <td style="text-align: left;">
+        {{songs[activeSong].duration}}
+      </td>
+    </tr>
+  </table>
+</div>
 <hr>
+
 <p>
   <audio #audioPlayer>
     <source src={{songs[activeSong].path}} type="audio/mp3">
@@ -35,27 +57,27 @@
 
 
 <div class="container-fluid" style="overflow-y:scroll;height:48vh;">
-    <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Song</th>
-            <th>Likes</th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let song of songs" [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'">
-                <td style="width:26px;"> {{song.id }} </td>
-                <td>
-                  <div (click)='changeSong(song.id-1)'>{{song.title}}</div>
-                </td>
-                <td>
-                  <div>{{song.likes}}</div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Song</th>
+        <th>Likes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let song of songs" [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'">
+        <td style="width:26px;"> {{song.id }} </td>
+        <td>
+          <div (click)='changeSong(song.id-1)'>{{song.title}}</div>
+        </td>
+        <td>
+          <div>{{song.likes}}</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <!--
   <ng-container *ngIf="dataJson | async as data">
