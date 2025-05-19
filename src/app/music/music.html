@@ -1,19 +1,21 @@
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <h2>Gunnar's Music</h2>
 
 <div class="container" style="width:210px; height:40px; padding-left:18px; padding-right:18px; text-align: center;">
-  <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px" (click)='goToPreviousSong()'>
-    <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+  <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding: 5px 5px 0px 5px; " (click)='goToPreviousSong()'>
+    <mat-icon aria-hidden="false" aria-label="previous" >skip_previous</mat-icon>
   </button>
-  <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px" (click)='playAudio()'>
-    <span [ngClass]="(playMode==='pausing')?'glyphicon glyphicon-play':'glyphicon glyphicon-pause'" aria-hidden="true"></span>
+  <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding: 5px 5px 0px 5px;" (click)='playAudio()'>
+    <!-- <span [ngClass]="(playMode==='pausing')?'glyphicon glyphicon-play':'glyphicon glyphicon-pause'" aria-hidden="true"></span> -->
+    <div *ngIf="(playMode=='pausing')"><mat-icon>play_arrow</mat-icon></div>
+    <div *ngIf="(playMode!='pausing')"><mat-icon>pause</mat-icon></div>
   </button>
-  <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px" (click)='stopAudio()'>
-    <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
+  <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding: 5px 5px 0px 5px; " (click)='stopAudio()'>
+    <mat-icon aria-hidden="false" aria-label="next">stop</mat-icon>
   </button>
-  <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px" (click)='goToNextSong()'>
-    <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
+  <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding: 5px 5px 0px 5px; " (click)='goToNextSong()'>
+    <mat-icon aria-hidden="false" aria-label="next">skip_next</mat-icon>
   </button>
   <div class="progress" style="height:5px;" (click)='progressBarClicked($event)' id="musicProgressBar">
     <div class="progress-bar"

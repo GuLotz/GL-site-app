@@ -1,10 +1,10 @@
-import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { song } from './song.model';
-import { resolve } from 'dns';
+
 
 @Component({
-    selector: 'app-music',
-    templateUrl: 'music.html',
+      selector: 'app-music',
+   templateUrl: 'music.html',
     standalone: false
 })
 
@@ -15,7 +15,7 @@ export class musicComponent implements OnInit {
 
   progress:string ='0%';
 
-  songs: Array<song> //= [new song(1, 'Guitar Rock', 'assets/songs/GunAudio5b.mp3', "01:53", 0)];
+  songs: Array<song> = [new song(1, "74f9edf1-1229-4132-8668-27f753dac086", 'Guitar Rock', 'assets/songs/GunAudio5b.mp3', "01:53", 0)];
 
   activeSong: number;
   sub: any;
@@ -29,7 +29,8 @@ export class musicComponent implements OnInit {
   }
 
   async updateSongList() {
-    this.getSongList().then(data => this.songs = data).then(() => { for (let i = 0; i < this.songs.length; i++){this.getSongLikes(this.songs[i].id).then(likes=>this.songs[i].likes=likes) } });
+    this.getSongList().then(data => this.songs = data).then(() => { for (let i = 0; i < this.songs.length; i++){ this.getSongLikes(this.songs[i].id).then(likes => this.songs[i].likes = likes) } });
+    console.log("Called updateSongList");
   }
 
   getSongList():Promise<song[]> {
@@ -50,7 +51,7 @@ export class musicComponent implements OnInit {
     this.myPlayer.nativeElement.onended = () => this.songHasEnded();
 
     this.myPlayer.nativeElement.ontimeupdate=()=>{
-      this.progress=this.myPlayer.nativeElement.currentTime/this.myPlayer.nativeElement.duration*100 + "%";
+      this.progress = this.myPlayer.nativeElement.currentTime / this.myPlayer.nativeElement.duration * 100 + "%";
       //console.log('timeupdate: progress: ' + this.progress);
     }
   }
@@ -67,7 +68,8 @@ export class musicComponent implements OnInit {
           this.updateSongList().then(() => {
             this.playMode = 'playing';
             this.myPlayer.nativeElement.play();
-            console.log('Button Action: play song number ' + this.activeSong + " : " + this.songs[this.activeSong].title);
+          }).then(() => {
+            console.log('Button Action: play song number ' + this.activeSong + " : " + this.songs[this.activeSong].title + " duration: " + this.songs[this.activeSong].duration);
           })
         }
         else {
@@ -95,6 +97,7 @@ export class musicComponent implements OnInit {
       }
       this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
       this.myPlayer.nativeElement.currentTime = 0;
+    }).then(() => {
       this.myPlayer.nativeElement.play();
       console.log('Button Action: previous. Playing song number ' + this.activeSong);
     })
@@ -109,6 +112,7 @@ export class musicComponent implements OnInit {
       }
       this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
       this.myPlayer.nativeElement.currentTime = 0;
+      }).then(()=>{
       this.myPlayer.nativeElement.play();
       console.log('Button Action: next. Playing song number ' + this.activeSong);
     })
@@ -125,7 +129,7 @@ export class musicComponent implements OnInit {
       this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
       this.myPlayer.nativeElement.currentTime = 0;
       this.myPlayer.nativeElement.play();
-      console.log('Song has ended 3. Progressing to next song. ' + this.activeSong);
+      console.log('Song has ended. Progressing to next song: ' + this.activeSong);
     })
   }
 

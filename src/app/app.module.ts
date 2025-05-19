@@ -4,6 +4,7 @@ import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 import { RouterModule, Routes } from '@angular/router';
 
@@ -38,5 +39,6 @@ import { audioExperimentsComponent } from './audio-experiments/audio-experiments
         FormsModule,
         appRouting,
         ReactiveFormsModule,
+        MatIconModule,
         NgbModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
