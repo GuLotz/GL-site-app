@@ -17,10 +17,10 @@
   <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding: 5px 5px 0px 5px; " (click)='goToNextSong()'>
     <mat-icon aria-hidden="false" aria-label="next" fontSet="material-icons-outlined">skip_next</mat-icon>
   </button>
-  <div class="progress" style="height:5px;" (click)='progressBarClicked($event)' id="musicProgressBar">
+  <div class="progress" style="height:7px;" (click)='progressBarClicked($event)' id="musicProgressBar">
     <div class="progress-bar"
          role="progressbar"
-         style="height:5px;"
+         style="height:7px;"
          [ngStyle]="{'width': progress}"
          aria-valuenow="0"
          aria-valuemin="0"
@@ -43,7 +43,7 @@
         Duration: 
       </td>
       <td style="text-align: left;">
-        {{songs[activeSong].duration}}
+        {{activeSongDuration}}
       </td>
     </tr>
   </table>
@@ -51,7 +51,7 @@
 <hr>
 
 <p>
-  <audio #audioPlayer>
+  <audio #audioPlayer (durationchange)="updateDuration()">
     <source src={{songs[activeSong].path}} type="audio/mp3">
     <em class="error"><strong>Error:</strong> Your browser doesn't appear to support HTML5 Audio.</em>
   </audio>
