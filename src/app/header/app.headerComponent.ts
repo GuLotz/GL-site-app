@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from "@angular/router";
-import { appRoutes } from "../routing/app.routing";
 
 @Component({
     selector: 'app-header',
