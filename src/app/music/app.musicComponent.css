@@ -1,0 +1,8 @@
+.musicSlider {
+  height: 10px;
+  margin: -20px 0px 0px 1px;
+}
+
+mat-slider-visual-thumb {
+  color: #FF0000;
+}

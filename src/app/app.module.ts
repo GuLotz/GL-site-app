@@ -23,13 +23,14 @@ import { audioExperimentsComponent } from './audio-experiments/audio-experiments
 import { AppRoutingModule } from './routing/app-routing.module';
 import { navigationComponent } from './navigation/app.navigationComponent';
 
+//        musicComponent is standalone now (otherwise would need to put it into declarations)
+
 @NgModule({
   declarations: [
         AppComponent,
         headerComponent,
         homeComponent,
         contentComponent,
-        musicComponent,
         meMyselfAndIComponent,
         imprintComponent,
         audioExperimentsComponent

@@ -1,38 +1,60 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { song } from './song.model';
 
+import { FormsModule } from '@angular/forms';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { NgFor, NgIf } from '@angular/common';
+
 
 @Component({
       selector: 'app-music',
-   templateUrl: 'music.html',
-    standalone: false
+  templateUrl: 'music.html',
+   styleUrl: 'app.musicComponent.css',
+  standalone: true,
+  imports: [MatCardModule, MatSliderModule, MatInputModule, MatIconModule, FormsModule, NgIf, NgFor]
 })
 
 export class musicComponent implements OnInit {
   @ViewChild('audioPlayer', { static: true }) myPlayer;
 
-  playMode:string ='pausing';
+  sliderValue: number;
 
-  progress:string ='0%';
+  playMode: string = 'pausing';
 
   songs: Array<song> = [new song(1, "74f9edf1-1229-4132-8668-27f753dac086", 'Guitar Rock', 'assets/songs/GunAudio5b.mp3', "01:53", 0)];
 
   activeSong: number;
-  activeSongDuration: string|undefined;
+  activeSongDuration: string | undefined;
+  activeSongPosition: number;
   sub: any;
 
   constructor(){
     this.activeSong = 0;
+    this.activeSongPosition = 0;
     this.activeSongDuration = undefined;
+    this.sliderValue = 0;
   }
 
   async ngOnInit() {
-    this.updateSongList()
+    this.updateSongList();
   }
 
   async updateSongList() {
     this.getSongList().then(data => this.songs = data).then(() => { for (let i = 0; i < this.songs.length; i++){ this.getSongLikes(this.songs[i].id).then(likes => this.songs[i].likes = likes) } });
     console.log("Called updateSongList");
+  }
+
+  async updateSliderValue() {
+    this.sliderValue = this.myPlayer.nativeElement.currentTime / this.myPlayer.nativeElement.duration * 100;
+    //console.log("sliderValue: " + this.sliderValue)
+  }
+
+  async sliderValueChanged(value: number) {
+    this.myPlayer.nativeElement.currentTime = value * this.myPlayer.nativeElement.duration / 100;
+    //console.log("Slider value changed to: " + value)
   }
 
   getSongList():Promise<song[]> {
@@ -51,14 +73,9 @@ export class musicComponent implements OnInit {
 
   ngAfterViewInit(){
     this.myPlayer.nativeElement.onended = () => this.songHasEnded();
-
-    this.myPlayer.nativeElement.ontimeupdate=()=>{
-      this.progress = this.myPlayer.nativeElement.currentTime / this.myPlayer.nativeElement.duration * 100 + "%";
       //console.log('timeupdate: progress: ' + this.progress);
     }
-  }
 
-  //playAudio(myPlayer: HTMLAudioElement){
   playAudio() {
       if (this.playMode === 'playing') {
         this.playMode = 'pausing';
@@ -81,7 +98,6 @@ export class musicComponent implements OnInit {
   }
 
   stopAudio(){
-    //var myPlayer:any = document.getElementById("audioPlayer");
     this.playMode = 'pausing';
     this.myPlayer.nativeElement.pause();
     this.myPlayer.nativeElement.currentTime = 0;
@@ -89,7 +105,6 @@ export class musicComponent implements OnInit {
   }
 
   goToPreviousSong(){
-    //var myPlayer:any = document.getElementById("audioPlayer");
     this.updateSongList().then(() => {
       this.playMode = 'playing';
       this.activeSong -= 1;
@@ -107,7 +122,6 @@ export class musicComponent implements OnInit {
   }
 
   goToNextSong() {
-    //var myPlayer:any = document.getElementById("audioPlayer");
     this.updateSongList().then(() => {
       this.playMode = 'playing';
       this.activeSong += 1;
@@ -124,7 +138,6 @@ export class musicComponent implements OnInit {
   }
 
   songHasEnded(){
-    //var myPlayer:any = document.getElementById("audioPlayer");
     this.updateSongList().then(() => {
       this.playMode = 'playing';
       this.activeSong += 1;
@@ -144,24 +157,11 @@ export class musicComponent implements OnInit {
       this.playMode = 'playing';
       this.myPlayer.nativeElement.currentTime = 0;
       this.activeSong = toSong;
+      this.activeSongPosition = 0;
       this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
       this.myPlayer.nativeElement.play();
       console.log('Song was changed: ' + this.activeSong);
     })
-  }
-
-  progressBarClicked(mouse: any) { // I would have wanted to use MouseEvent, but that does not know its properties and gives compilation errors
-    var percentPlayed: number;
-    var progressBarWidth: number;
-    console.log('Progressbar was clicked');
-    console.log(mouse);
-    progressBarWidth=mouse.target.parentNode.offsetWidth;
-    if (mouse.target.className=='progress'){
-      progressBarWidth=mouse.target.offsetWidth;
-    }
-    percentPlayed=(mouse.pageX-mouse.target.offsetLeft)/progressBarWidth *100
-    this.progress=percentPlayed + '%';
-    this.myPlayer.nativeElement.currentTime=this.myPlayer.nativeElement.duration * percentPlayed / 100 ;
   }
 
   updateDuration() {

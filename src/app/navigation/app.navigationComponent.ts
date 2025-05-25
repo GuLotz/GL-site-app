@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { routes } from '../routing/app-routing.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
-import { RouterOutlet, Router, RouterModule } from '@angular/router';
+import { RouterOutlet, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
