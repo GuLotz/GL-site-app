@@ -12,7 +12,7 @@ import { NgFor, NgIf } from '@angular/common';
 @Component({
       selector: 'app-music',
   templateUrl: 'music.html',
-   styleUrl: 'app.musicComponent.css',
+   styleUrl: 'app.musicComponent.scss',
   standalone: true,
   imports: [MatCardModule, MatSliderModule, MatInputModule, MatIconModule, FormsModule, NgIf, NgFor]
 })

@@ -7,7 +7,7 @@ import { RouterOutlet, Router } from '@angular/router';
 @Component({
   selector: 'app-navigation',
   templateUrl: 'app-navigation.html',
-  styleUrl: 'app-navigation.css',
+  styleUrl: 'app-navigation.scss',
   imports: [MatTabsModule, MatButtonModule, RouterOutlet]
 })
 export class navigationComponent {
