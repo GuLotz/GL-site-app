@@ -7,6 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { NgFor, NgIf } from '@angular/common';
+import { ViewEncapsulation } from '@angular/compiler';
 
 
 @Component({

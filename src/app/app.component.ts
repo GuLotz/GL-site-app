@@ -7,7 +7,7 @@ import { headerComponent } from './header/app.headerComponent';
   selector: 'app-gl-site',
   templateUrl: 'app.component.html',
   standalone: false,
-  styleUrl: '../styles/styles.scss'
+  styleUrl: '../assets/styles/main.scss'
 })
 export class AppComponent  {
 

@@ -27,7 +27,7 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.scss"
+              "src/assets/styles/main.scss"
             ],
             "scripts": [],
             "extractLicenses": false,
@@ -86,7 +86,7 @@
             "scripts": [],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.scss"
+              "src/assets/styles/main.scss"
             ],
             "assets": [
               "src/assets",

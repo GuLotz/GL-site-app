@@ -1,0 +1,17 @@
+@use 'sass:color';
+//@import '../abstracts/variables';
+$primary-color: #369;
+$secondary-color: #A0D9E9;
+$font-stack: 'Arial', sans-serif;
+
+.button {
+  background-color: $primary-color;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  font-family: $font-stack;
+
+  &:hover {
+    background-color: color.adjust($primary-color, $lightness: -10%);
+  }
+}

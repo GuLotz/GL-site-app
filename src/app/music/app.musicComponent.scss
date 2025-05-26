@@ -2,5 +2,5 @@
 
 // Customize the entire app. Change :root to your selector if you want to scope the styles.
 :root {
-  @include mat.slider-overrides(( ripple-color: orange, hover-state-layer-color: red, ));
+  @include mat.slider-overrides(( ));
 }

@@ -1,0 +1,41 @@
+@use 'abstracts/variables';
+@use 'components/component';
+@use 'components/slider.component';
+@use 'components/button.component';
+@use '@angular/material' as mat;
+
+html {
+  @include mat.core();
+  @include mat.theme(( color: ( theme-type: light, primary: mat.$azure-palette, tertiary: mat.$blue-palette, ), typography: Roboto, density: 0, ));
+}
+
+.background-pane {
+  background-color: #5098C0;
+}
+
+.content {
+  background-color: #AEF;
+}
+
+mat-card-content {
+  background-color: #4088B0;
+  border-radius: 15px;
+}
+
+h1 {
+    padding: 10px 20px 0px 20px;
+}
+h2 {
+  padding: 5px 20px 0px 20px;
+}
+h3 {
+  padding: 2px 20px 0px 20px;
+}
+
+p{
+     padding: 1px 20px 0px 20px;
+}
+
+mat-card-content td {
+  color: aliceblue;
+}

@@ -1,0 +1,12 @@
+@use '../abstracts/mixins' as *;
+//@import '../abstracts/variables';
+$primary-color: #369;
+$secondary-color: #A0D9E9;
+$font-stack: 'Arial', sans-serif;
+
+.container {
+  @include flex-center;
+
+  background-color: $secondary-color;
+  
+}
