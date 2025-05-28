@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <div style="margin: 10px auto; width: 100%; padding-top:10px;">
+    <div style="margin: 0 0 0px 0; width: 100%; padding-top:10px;">
       <table style="margin:auto;">
         <tr>
           <td style="text-align: right;">
@@ -48,7 +48,7 @@
       </table>
     </div>
     <p>
-      <audio #audioPlayer (durationchange)="updateDuration()" (timeupdate)="updateSliderValue()" (ended)="songHasEnded()">
+      <audio #audioPlayer (durationchange)="updateDuration()" (timeupdate)="updateSliderValue()" (ended)="songHasEnded()" style="padding:0;">
         <source src={{songs[activeSong].path}} type="audio/mp3">
         <em class="error"><strong>Error:</strong> Your browser doesn't appear to support HTML5 Audio.</em>
       </audio>
@@ -56,7 +56,7 @@
   </mat-card-content>
 </mat-card>
 
-<div class="container-fluid" style="overflow-y:scroll;height:48vh;">
+<div class="container-fluid" style="overflow-y:scroll;height:42vh; margin-bottom:-19px;">
   <table>
     <thead>
       <tr>

@@ -16,10 +16,14 @@ html {
 
 .background-pane {
   background-color: #5098C0;
+  padding-bottom: 20px;
+  min-height: 924px;
 }
 
 .content {
   background-color: #AEF;
+  padding-bottom: 0px;
+  height:614px;
 }
 
 mat-card-content {

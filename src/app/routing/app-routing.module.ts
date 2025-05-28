@@ -15,7 +15,7 @@ export const routes: Routes = [
   { path: 'music', component: musicComponent, data: [{ headerImageURL: 'HeaderPicture3.jpg' }, { tabTitle: 'Music' }] },
   { path: 'meMyselfAndI', component: meMyselfAndIComponent, data: [{ headerImageURL: 'HeaderPicture4.jpg' }, { tabTitle: 'Me, Myself and I' }] },
   { path: 'imprint', component: imprintComponent, data: [{ headerImageURL: 'HeaderPicture2.jpg' }, { tabTitle: 'Imprint' }] },
-  { path: 'Experimental', component: audioExperimentsComponent, data: [{ headerImageURL: 'HeaderPicture2.jpg' }, { tabTitle: 'Experiments' }] },
+  //{ path: 'Experimental', component: audioExperimentsComponent, data: [{ headerImageURL: 'HeaderPicture2.jpg' }, { tabTitle: 'Experiments' }] },
   { path: '**', component: pageNotFoundComponent, data: [{ headerImageURL: 'HeaderPicture4.jpg' }, { tabTitle: '' }] }
 ];
 
