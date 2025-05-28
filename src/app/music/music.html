@@ -1,63 +1,59 @@
-<!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">-->
-
 <h2>Gunnar's Music</h2>
 
 <mat-card>
   <mat-card-content>
-    <div class="container" style="width:210px; height:40px; padding-left:18px; padding-right:18px; text-align: center;">
-      <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding: 5px 5px 0px 5px; " (click)='goToPreviousSong()'>
-        <mat-icon aria-hidden="false" aria-label="previous" fontSet="material-icons-outlined">skip_previous</mat-icon>
-      </button>
-      <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding: 5px 5px 0px 5px;" (click)='playAudio()'>
-        <!-- <span [ngClass]="(playMode==='pausing')?'glyphicon glyphicon-play':'glyphicon glyphicon-pause'" aria-hidden="true"></span> -->
-        <div *ngIf="(playMode=='pausing')"><mat-icon fontSet="material-icons-outlined">play_arrow</mat-icon></div>
-        <div *ngIf="(playMode!='pausing')"><mat-icon fontSet="material-icons-outlined">pause</mat-icon></div>
-      </button>
-      <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding: 5px 5px 0px 5px; " (click)='stopAudio()'>
-        <mat-icon aria-hidden="false" aria-label="next" fontSet="material-icons-outlined">stop</mat-icon>
-      </button>
-      <button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding: 5px 5px 0px 5px; " (click)='goToNextSong()'>
-        <mat-icon aria-hidden="false" aria-label="next" fontSet="material-icons-outlined">skip_next</mat-icon>
-      </button>
+    <div class="playerControls">
+      <div class="container player" style="width:300px; height:40px; padding-left:18px; padding-right:18px; text-align: center;">
+        <button class="playerButton" style="margin-left: 1px; margin-right: 1px; padding: 5px 5px 0px 5px; " (click)='goToPreviousSong()'>
+          <mat-icon aria-hidden="false" aria-label="previous" fontSet="material-icons-outlined">skip_previous</mat-icon>
+        </button>
+        <button class="playerButton" style="margin-left: 1px; margin-right: 1px; padding: 5px 5px 0px 5px;" (click)='playAudio()'>
+          <!-- <span [ngClass]="(playMode==='pausing')?'glyphicon glyphicon-play':'glyphicon glyphicon-pause'" aria-hidden="true"></span> -->
+          <div *ngIf="(playMode=='pausing')"><mat-icon fontSet="material-icons-outlined">play_arrow</mat-icon></div>
+          <div *ngIf="(playMode!='pausing')"><mat-icon fontSet="material-icons-outlined">pause</mat-icon></div>
+        </button>
+        <button class="playerButton" style="margin-left: 1px; margin-right: 1px; padding: 5px 5px 0px 5px; " (click)='stopAudio()'>
+          <mat-icon aria-hidden="false" aria-label="next" fontSet="material-icons-outlined">stop</mat-icon>
+        </button>
+        <button class="playerButton" style="margin-left: 1px; margin-right: 1px; padding: 5px 5px 0px 5px; " (click)='goToNextSong()'>
+          <mat-icon aria-hidden="false" aria-label="next" fontSet="material-icons-outlined">skip_next</mat-icon>
+        </button>
       </div>
-      <div class="container" style="width:210px; height: 20px;">
-        <mat-slider class="musicSlider" 
+      <div class="container playerSlider">
+        <mat-slider class="musicSlider"
                     disabled=false
                     max=100
                     min=0
                     step=1
-                    discrete=false
-                    showTickMarks=false>
-          <input matSliderThumb [(ngModel)]="sliderValue" (valueChange)="sliderValueChanged($event)">
+                    discrete="false"
+                    showTickMarks=false
+                    >
+          <input matSliderThumb [(ngModel)]="sliderValue" (valueChange)="onSliderValueChanged($event)" (input)="onInputChange($event)">
         </mat-slider>
+        <div style="width: 100px;" class="container playerPosition">
+          {{activeSongPosition}} / {{activeSongDuration}}
+        </div>
       </div>
-      <div style="margin: 10px auto; width: 100%; padding-top:10px;">
-        <table style="margin:auto;">
-          <tr>
-            <td style="text-align: right;">
-              Now playing:
-            </td>
-            <td style="text-align: left;">
-              {{songs[activeSong].title}}
-            </td>
-          </tr>
-          <tr>
-            <td style="text-align: right;">
-              Duration:
-            </td>
-            <td style="text-align: left;">
-              {{activeSongDuration}}
-            </td>
-          </tr>
-        </table>
-      </div>
-      <p>
-        <audio #audioPlayer (durationchange)="updateDuration()" (timeupdate)="updateSliderValue()" (ended)="songHasEnded()">
-          <source src={{songs[activeSong].path}} type="audio/mp3">
-          <em class="error"><strong>Error:</strong> Your browser doesn't appear to support HTML5 Audio.</em>
-        </audio>
-      </p>
-</mat-card-content>
+    </div>
+    <div style="margin: 10px auto; width: 100%; padding-top:10px;">
+      <table style="margin:auto;">
+        <tr>
+          <td style="text-align: right;">
+            Now playing:
+          </td>
+          <td style="text-align: left;">
+            {{songs[activeSong].title}}
+          </td>
+        </tr>
+      </table>
+    </div>
+    <p>
+      <audio #audioPlayer (durationchange)="updateDuration()" (timeupdate)="updateSliderValue()" (ended)="songHasEnded()">
+        <source src={{songs[activeSong].path}} type="audio/mp3">
+        <em class="error"><strong>Error:</strong> Your browser doesn't appear to support HTML5 Audio.</em>
+      </audio>
+    </p>
+  </mat-card-content>
 </mat-card>
 
 <div class="container-fluid" style="overflow-y:scroll;height:48vh;">
@@ -71,9 +67,9 @@
     </thead>
     <tbody>
       <tr *ngFor="let song of songs" [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'">
-        <td style="width:26px;"> {{song.id }} </td>
+        <td style="width:26px;"> {{ song.id }} </td>
         <td>
-          <div (click)='changeSong(song.id-1)'>{{song.title}}</div>
+          <div class="listSongName" (click)='changeSong(song.id-1)'>{{song.title}}</div>
         </td>
         <td>
           <div>{{song.likes}}</div>

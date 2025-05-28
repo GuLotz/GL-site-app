@@ -6,7 +6,7 @@ $font-stack: 'Arial', sans-serif;
 
 .container {
   @include flex-center;
-
   background-color: $secondary-color;
-  
+  padding: 0px;
 }
+

@@ -1,7 +1,12 @@
-@use 'abstracts/variables';
+//@use 'abstracts/variables';
+$primary-color: #369;
+$secondary-color: #A0D9E9;
+$font-stack: 'Arial', sans-serif;
+
 @use 'components/component';
 @use 'components/slider.component';
 @use 'components/button.component';
+@use 'components/mat-icon.component';
 @use '@angular/material' as mat;
 
 html {
@@ -23,17 +28,21 @@ mat-card-content {
 }
 
 h1 {
-    padding: 10px 20px 0px 20px;
+  padding: 10px 20px 0px 20px;
+  color: $primary-color;
 }
 h2 {
   padding: 5px 20px 0px 20px;
+  color: $primary-color;
 }
 h3 {
   padding: 2px 20px 0px 20px;
+  color: $primary-color;
 }
 
-p{
-     padding: 1px 20px 0px 20px;
+p {
+  padding: 1px 20px 0px 20px;
+  color: $primary-color;
 }
 
 mat-card-content td {

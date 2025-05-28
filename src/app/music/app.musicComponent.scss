@@ -1,6 +1,69 @@
 @use '@angular/material' as mat;
+//@import '../abstracts/variables';
+$primary-color: #369;
+$secondary-color: #A0D9E9;
+$font-stack: 'Arial', sans-serif;
+$player-color: silver;
 
-// Customize the entire app. Change :root to your selector if you want to scope the styles.
-:root {
-  @include mat.slider-overrides(( ));
+.player {
+  background-color: $player-color;
+  border-radius: 15px;
+  border: none;
+  border-width: 1px;
+  margin: 0px;
+}
+
+.playerControls {
+  display: table;
+  text-align: center;
+  padding: 10px 0 0 0;
+  background-color: $player-color;
+  margin: 0px auto;
+  width: 300px;
+  border: solid;
+  border-radius: 15px;
+  border-color: $secondary-color;
+  border-width: 2px;
+}
+
+.playerPosition {
+  background-color: $player-color;
+  border-radius: 15px;
+  width: 75px;
+  height: 20px;
+  margin: 7px 0 0 0;
+  font-size: small;
+}
+
+.playerSlider {
+  display: ruby;
+  background-color: $player-color;
+  border-radius: 15px;
+  width: 200px;
+  margin: 7px 0 0 0;
+}
+
+table {
+  color: $primary-color;
+}
+
+.passiveSong .listSongName {
+  margin: -3px;
+  border: none;
+  cursor: pointer;
+
+  &hover {
+    text-decoration: underline;
+  }
+}
+
+.activeSong .listSongName {
+  font-weight: bold;
+  margin: -3px;
+  border: none;
+  cursor: pointer;
+
+  &hover {
+    text-decoration: underline;
+  }
 }

@@ -2,16 +2,37 @@
 //@import '../abstracts/variables';
 $primary-color: #369;
 $secondary-color: #A0D9E9;
+$ternary-color: silver;
 $font-stack: 'Arial', sans-serif;
 
 .button {
   background-color: $primary-color;
   border-radius: 5px;
+  border: solid;
+  border-color: slategray;
   color: white;
   padding: 10px 20px;
   font-family: $font-stack;
 
   &:hover {
-    background-color: color.adjust($primary-color, $lightness: -10%);
+    background-color: color.adjust($primary-color, $lightness: -20%);
+  }
+}
+
+.playerButton {
+  background-color: $ternary-color;
+  border-radius: 5px;
+  border: solid;
+  border-width: 2px;
+  border-color: slategray;
+  color: white;
+  padding: 10px 10px;
+  margin: 10px 0px;
+  font-family: $font-stack;
+  font-weight: 100;
+
+  &:hover {
+    background-color: lightslategrey;
+    color: silver;
   }
 }

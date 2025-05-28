@@ -6,5 +6,5 @@ $font-stack: 'Arial', sans-serif;
 
 // Customize the entire app. Change :root to your selector if you want to scope the styles.
 :root {
-  @include mat.slider-overrides(( active-track-height: 5px, inactive-track-height: 12px, inactive-track-color: #FFFFFF, active-track-color: $primary-color, handle-color: $primary-color, handle-shape: circle, handle-width: 2px, handle-height: 15px));
+  @include mat.slider-overrides(( active-track-height: 5px, inactive-track-height: 12px, inactive-track-color: #FFFFFF, active-track-color: $primary-color, handle-color: $primary-color, handle-width: 2px, handle-height: 15px));
 }
