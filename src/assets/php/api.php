@@ -20,10 +20,22 @@ switch ($method) {
         break;
 
     case 'POST':
+        error_log(print_r($input,true));
+
         $SongID = $input['SongID'];
         $UserID = $input['UserID'];
-        $conn->execute_query("INSERT INTO userlikes (SongID, UserID) VALUES (?,?) WHERE NOT EXISTS(SELECT * FROM userlikes WHERE SongID=? AND UserID=?);",[$SongID, $UserID,$SongID, $UserID]);
-        echo json_encode(["message" => "Like added successfully"]);
+
+        $result = $conn->execute_query("SELECT COUNT(*) FROM userlikes WHERE SongID=? AND UserID=?;", [$SongID,$UserID]);
+        $found=$result->fetch_assoc();
+        if ($found['COUNT(*)']>0) {
+          echo json_encode(["message" => "Vote was already counted"]);
+        } else {
+          $conn->execute_query("INSERT INTO userlikes (SongID,UserID) VALUES (?,?);", [$SongID,$UserID]);
+          echo json_encode(["message" => "Your vote has been counted"]);
+        }
+
+        #$conn->execute_query("INSERT INTO userlikes (SongID, UserID) SELECT ?,? FROM userlikes WHERE NOT EXISTS(SELECT 1 FROM userlikes WHERE SongID=? AND UserID=?);",[$SongID,$UserID,$SongID,$UserID]);
+        #echo json_encode(["message" => "Like added successfully"]);
         break;
 
     # case 'DELETE':

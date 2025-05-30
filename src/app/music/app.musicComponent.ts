@@ -195,4 +195,19 @@ export class musicComponent implements OnInit {
     this.activeSongPosition = "" + String(min).padStart(2, '0') + ":" + String(sec).padStart(2, '0');
     console.log("Position change detected: " + this.activeSongPosition);
   }
+
+  onLike() {
+    fetch('assets/php/api.php', {
+      method: 'post',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ 'SongID': this.songs[this.activeSong].uuid , 'UserID': this.getUserID()})
+    })
+      .then((reply) => console.log(reply))
+  }
+
+  getUserID() {
+    return 'Gunnar'
+  }
 }
