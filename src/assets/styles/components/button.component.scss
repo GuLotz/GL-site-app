@@ -36,3 +36,22 @@ $font-stack: 'Arial', sans-serif;
     color: silver;
   }
 }
+
+.likeButton {
+  background-color: $ternary-color;
+  border-radius: 5px;
+  border: solid;
+  border-width: 2px;
+  border-color: slategray;
+  color: white;
+  padding: 10px 10px;
+  margin: 10px 0px 10px 40px;
+  font-family: $font-stack;
+  font-weight: 100;
+
+  &:hover {
+    background-color: lightslategrey;
+    color: silver;
+  }
+}
+
