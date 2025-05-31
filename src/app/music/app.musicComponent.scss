@@ -47,8 +47,9 @@ table {
   color: $primary-color;
 }
 
-.passiveSong .listSongName {
+.passiveSong {
   margin: -3px;
+  padding: 0px;
   border: none;
   cursor: pointer;
 
@@ -57,9 +58,10 @@ table {
   }
 }
 
-.activeSong .listSongName {
+.activeSong {
   font-weight: bold;
   margin: -3px;
+  padding: 0px;
   border: none;
   cursor: pointer;
 

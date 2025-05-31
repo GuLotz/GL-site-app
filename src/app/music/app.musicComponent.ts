@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, AfterViewInit } from '@angular/core';
 import { song } from './song.model';
 
 import { FormsModule } from '@angular/forms';
@@ -7,44 +7,66 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { NgFor, NgIf, NgClass } from '@angular/common';
-import { ViewEncapsulation } from '@angular/compiler';
+import { v4 as uuid } from 'uuid';
 
+import {MatSort, MatSortModule} from '@angular/material/sort';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 
 @Component({
   selector: 'app-music',
   templateUrl: 'music.html',
   styleUrl: 'app.musicComponent.scss',
   standalone: true,
-  imports: [MatCardModule, MatSliderModule, MatInputModule, MatIconModule, FormsModule, NgIf, NgFor, NgClass],
+  imports: [MatCardModule, MatSliderModule, MatInputModule, MatIconModule, FormsModule, NgIf, NgFor, NgClass, MatTableModule, MatSortModule],
 })
 
-export class musicComponent implements OnInit {
+export class musicComponent implements OnInit, AfterViewInit {
   @ViewChild('audioPlayer', { static: true }) myPlayer;
 
   sliderValue: number;
 
   playMode: string = 'pausing';
 
-  songs: Array<song> = [new song(1, "74f9edf1-1229-4132-8668-27f753dac086", 'Guitar Rock', 'assets/songs/GunAudio5b.mp3', "01:53", 0)];
+  songs: Array<song> = [new song(1, "74f9edf1-1229-4132-8668-27f753dac086", 'Guitar Rock', 'assets/songs/GunAudio5b.mp3', "01:53", 0),
+                        new song(2, "084daa22-dd4f-42ff-9711-f6dc5db29498", 'Gritty Organ', 'assets/songs/QS8.2_018_Bandlabs.mp3', "02:24", 1)];
 
   activeSong: number;
   activeSongDuration: string | undefined;
   activeSongPosition: string | undefined;
   sub: any;
+  renderedData: song[];
 
   constructor() {
     this.activeSong = 0;
     this.activeSongPosition = "00:00";
     this.activeSongDuration = undefined;
     this.sliderValue = 0;
+    this.dataSource = new MatTableDataSource(this.songs);
   }
 
   async ngOnInit() {
     this.updateSongList();
   }
 
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+    this.dataSource.connect().subscribe(d => this.renderedData = d);
+    //this.myPlayer.nativeElement.onended = () => this.songHasEnded();
+  }
+
   async updateSongList() {
-    this.getSongList().then(data => this.songs = data).then(() => { for (let i = 0; i < this.songs.length; i++) { this.getSongLikes(this.songs[i].id).then(likes => this.songs[i].likes = likes) } });
+    this.getSongList().then(data => this.songs = data)
+      .then(() => {
+        for (let i = 0; i < this.songs.length; i++) {
+          this.getSongLikes(this.songs[i].uuid)
+          .then(likes => this.songs[i].likes = likes)
+        }
+      })
+      .then(() => {
+        this.dataSource = new MatTableDataSource(this.songs);
+        this.dataSource.sort = this.sort;
+        this.dataSource.connect().subscribe(d => this.renderedData = d);
+    })
     console.log("Called updateSongList");
   }
 
@@ -55,10 +77,9 @@ export class musicComponent implements OnInit {
   }
 
   onSliderValueChanged(value: number) {
-    console.log("Slider value changed to: " + value);
     this.myPlayer.nativeElement.currentTime = value * this.myPlayer.nativeElement.duration / 100;
     //this.updateSongPosition(this.myPlayer.nativeElement.currentTime);
-    //console.log("Slider value changed to: " + value)
+    //console.log("Slider value changed to: " + value + "resulting in song position " + this.myPlayer.nativeElement.currentTime);
   }
 
   onInputChange(event: Event) {
@@ -75,15 +96,10 @@ export class musicComponent implements OnInit {
     })
   }
 
-  getSongLikes(song: number): Promise<number> {
+  getSongLikes(song: string): Promise<number> {
     return new Promise((resolve, reject) => {
       fetch('assets/php/api.php?SongID=' + song).then(res => resolve(res.json()))
     })
-  }
-
-  ngAfterViewInit() {
-    this.myPlayer.nativeElement.onended = () => this.songHasEnded();
-    //console.log('timeupdate: progress: ' + this.progress);
   }
 
   playAudio() {
@@ -115,39 +131,63 @@ export class musicComponent implements OnInit {
   }
 
   goToPreviousSong() {
-    this.updateSongList().then(() => {
-      this.playMode = 'playing';
-      this.activeSong -= 1;
+    var nextSong: song;
+    var positionInSortedList: number;
 
-      if (this.activeSong == -1) {
-        this.activeSong = this.songs.length - 1;
+    this.updateSongList().then(() => {
+      positionInSortedList = this.getSongPositionInList(this.songs[this.activeSong].uuid, this.renderedData);
+      //console.log("Active song: ", this.activeSong);
+      //console.log("Position of active song in sorted table: ", positionInSortedList);
+      //console.log("length of list: ", this.renderedData.length);
+
+      if (positionInSortedList == 0 ) {
+        nextSong = this.renderedData[this.renderedData.length -1];
       }
+      else {
+        nextSong = this.renderedData[positionInSortedList - 1];
+      }
+      this.playMode = 'playing';
+      this.activeSong = this.getSongPositionInList(nextSong.uuid, this.songs);
+
       this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
       this.myPlayer.nativeElement.currentTime = 0;
     }).then(() => {
       this.myPlayer.nativeElement.play();
     }).then(() => {
-      console.log('Button Action: previous. Playing song number ' + this.activeSong);
+      console.log('Button Action: skip back. Playing song number ' + this.activeSong);
     })
   }
 
   goToNextSong() {
+    var nextSong: song;
+    var positionInSortedList: number;
+
     this.updateSongList().then(() => {
-      this.playMode = 'playing';
-      this.activeSong += 1;
-      if (this.activeSong == this.songs.length) {
-        this.activeSong = 0;
+      positionInSortedList = this.getSongPositionInList(this.songs[this.activeSong].uuid, this.renderedData);
+      //console.log("Active song: ", this.activeSong);
+      //console.log("Position of active song in sorted table: ", positionInSortedList);
+      //console.log("length of list: ", this.renderedData.length);
+
+      if (positionInSortedList == this.renderedData.length-1) {
+        nextSong = this.renderedData[0];
       }
+      else {
+        nextSong = this.renderedData[positionInSortedList + 1];        
+      }
+      this.playMode = 'playing';
+      this.activeSong = this.getSongPositionInList(nextSong.uuid,this.songs );
+
       this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
       this.myPlayer.nativeElement.currentTime = 0;
     }).then(() => {
       this.myPlayer.nativeElement.play();
     }).then(() => {
-      console.log('Button Action: next. Playing song number ' + this.activeSong);
+      console.log('Button Action: skip forward. Playing song number ' + this.activeSong);
     })
   }
 
   songHasEnded() {
+    /*
     this.updateSongList().then(() => {
       this.playMode = 'playing';
       this.activeSong += 1;
@@ -160,6 +200,9 @@ export class musicComponent implements OnInit {
     }).then(() => {
       console.log('Song has ended. Progressing to next song: ' + this.activeSong);
     })
+    */
+    this.goToNextSong();
+    console.log('Song has ended. Progressing to next song: ' + this.activeSong);
   }
 
   changeSong(toSong: number) {
@@ -182,7 +225,7 @@ export class musicComponent implements OnInit {
     sec = ~~(this.myPlayer.nativeElement.duration % 60);
 
     this.activeSongDuration = "" + String(min).padStart(2, '0') + ":" + String(sec).padStart(2, '0');
-    console.log("Duration change detected: " + this.activeSongDuration);
+    //console.log("Duration change detected: " + this.activeSongDuration);
   }
 
   updateSongPosition(position: number) {
@@ -193,21 +236,61 @@ export class musicComponent implements OnInit {
     sec = ~~(position % 60);
 
     this.activeSongPosition = "" + String(min).padStart(2, '0') + ":" + String(sec).padStart(2, '0');
-    console.log("Position change detected: " + this.activeSongPosition);
+    //console.log("Position change detected: " + this.activeSongPosition);
+  }
+
+  getSongPositionInList(songUUID: string, songList: song[]): number {
+    var position: number = -1;
+    songList.forEach(
+      (song,index) => {
+        //console.log("index: ", index, "song.uuid: ", song.uuid, " looking for: ", songUUID, "found? ", song.uuid== songUUID);
+        if (song.uuid == songUUID) {
+          position = index;
+        }
+      }
+    )
+    return position;
   }
 
   onLike() {
+    const userID = this.getOrCreateUserID();
+    if (userID == null) {
+      throw "No userId available";
+    }
+
     fetch('assets/php/api.php', {
       method: 'post',
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ 'SongID': this.songs[this.activeSong].uuid , 'UserID': this.getUserID()})
+      body: JSON.stringify({ 'SongID': this.songs[this.activeSong].uuid , 'UserID': userID})
     })
       .then((reply) => console.log(reply))
   }
 
-  getUserID() {
-    return 'Gunnar'
+  getOrCreateUserID(): null | string {
+    if (typeof (Storage) !== "undefined") {
+      const storedUser = localStorage.getItem("UserID");
+      if (storedUser == null) {
+        const newlyGeneratedUserId = uuid();
+        localStorage.setItem("UserID", newlyGeneratedUserId);
+        return localStorage.getItem("UserID");
+      }
+      return storedUser
+    } else {
+      return null
+    }
   }
+
+  //Functions for the table
+  displayedColumns: string[] = ['id', 'title', 'likes'];
+  dataSource: MatTableDataSource<song>;
+
+  @ViewChild(MatSort) sort: MatSort;
+
+  announceSortChange(e:Event) {
+    console.log(e);
+  }
+
+  
 }
