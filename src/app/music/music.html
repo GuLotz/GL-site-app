@@ -57,30 +57,6 @@
     </p>
   </mat-card-content>
 </mat-card>
-<!--
-<div class="container-fluid" style="overflow-y:scroll;height:392px; margin-bottom:-19px;">
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Song</th>
-        <th>Likes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let song of songs" [ngClass]="(song.id-1==activeSong)?'activeSong':'passiveSong'">
-        <td style="width:26px;"> {{ song.id }} </td>
-        <td>
-          <div class="listSongName" (click)='changeSong(song.id-1)'>{{song.title}}</div>
-        </td>
-        <td>
-          <div>{{song.likes}}</div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
--->
 
 <div class="container-fluid" style="overflow-y:scroll;height:391px; padding: 0px; margin-bottom:-19px;">
   <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">

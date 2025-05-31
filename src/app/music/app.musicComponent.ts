@@ -6,7 +6,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { NgFor, NgIf, NgClass } from '@angular/common';
+import { NgIf, NgClass } from '@angular/common';
 import { v4 as uuid } from 'uuid';
 
 import {MatSort, MatSortModule} from '@angular/material/sort';
@@ -17,7 +17,7 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
   templateUrl: 'music.html',
   styleUrl: 'app.musicComponent.scss',
   standalone: true,
-  imports: [MatCardModule, MatSliderModule, MatInputModule, MatIconModule, FormsModule, NgIf, NgFor, NgClass, MatTableModule, MatSortModule],
+  imports: [MatCardModule, MatSliderModule, MatInputModule, MatIconModule, FormsModule, NgIf, NgClass, MatTableModule, MatSortModule],
 })
 
 export class musicComponent implements OnInit, AfterViewInit {
