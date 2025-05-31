@@ -1,0 +1,38 @@
+@use '@angular/material' as mat;
+@use "sass:color";
+//@import '../abstracts/variables';
+$primary-color: #369;
+$secondary-color: #A0D9E9;
+$ternary-color: silver;
+$font-stack: 'Arial', sans-serif;
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+:root {
+  @include mat.table-overrides(( background-color:color.adjust($ternary-color,$lightness: 10%),
+      header-headline-color: $primary-color,
+      header-headline-weight: bold,
+      row-item-label-text-color:$primary-color,
+      row-item-container-height: 15px
+  ));
+}
+
+.mat-mdc-row:nth-child(even) {
+  background-color: color.adjust($ternary-color,$lightness: 20%);
+  border-bottom: none;
+  border-top: none;
+}
+
+.mat-mdc-row:nth-child(odd) {
+  background-color: color.adjust($ternary-color,$lightness: 30%);
+  border-bottom: none;
+  border-top: none;
+}
+
+.mat-mdc-header-row {
+    border-bottom-width: 3px;
+}
+
+.mat-mdc-cell {
+    border-bottom-style: none !important;
+}
+

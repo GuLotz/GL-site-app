@@ -6,6 +6,7 @@ $font-stack: 'Arial', sans-serif;
 @use 'components/component';
 @use 'components/slider.component';
 @use 'components/button.component';
+@use 'components/table.component';
 @use 'components/mat-icon.component';
 @use '@angular/material' as mat;
 
