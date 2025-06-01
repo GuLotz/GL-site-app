@@ -52,6 +52,7 @@ export class musicComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.connect().subscribe(d => this.renderedData = d);
+    this.scrollToActiveSong();
     //this.myPlayer.nativeElement.onended = () => this.songHasEnded();
   }
 
@@ -107,6 +108,7 @@ export class musicComponent implements OnInit, AfterViewInit {
     if (this.playMode === 'playing') {
       this.playMode = 'pausing';
       this.myPlayer.nativeElement.pause();
+      this.scrollToActiveSong();
       //console.log('Button Action: pause');
     }
     else {
@@ -115,6 +117,7 @@ export class musicComponent implements OnInit, AfterViewInit {
           this.playMode = 'playing';
           this.myPlayer.nativeElement.play();
         }).then(() => {
+          this.scrollToActiveSong();
           //console.log('Button Action: play song number ' + this.activeSong + " : " + this.songs[this.activeSong].title);
         })
       }
@@ -279,12 +282,13 @@ export class musicComponent implements OnInit, AfterViewInit {
 
   announceSortChange(e:Event) {
     console.log(e);
+    this.scrollToActiveSong();
   }
 
   scrollToActiveSong(): void {
-    //console.log("Tried to scroll to active song: ", this.activeSong+1);
+    console.log("Tried to scroll to active song: ", this.activeSong+1);
     const rowElement = document.getElementById(`title-` + (this.activeSong + 1));
-    //console.log("rowElement:", rowElement );
+    console.log("rowElement:", rowElement );
     if (rowElement) {
       rowElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
