@@ -438,5 +438,13 @@
     "path": "assets/songs/2025-02-16.mp3",
     "duration": "04:18",
     "likes": 0
+  },
+  {
+    "id": 56,
+    "uuid": "eb914126-52b1-495a-b587-46f9f0763965",
+    "title": "2025-05-31 May the night be smooth",
+    "path": "assets/songs/2025-05-31.mp3",
+    "duration": "02:55",
+    "likes": 0
   }
 ]
