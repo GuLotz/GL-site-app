@@ -278,11 +278,11 @@ export class musicComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['id', 'title', 'likes'];
   dataSource: MatTableDataSource<song>;
 
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   announceSortChange(e:Event) {
     console.log(e);
-    this.scrollToActiveSong();
+    setTimeout(() => { this.scrollToActiveSong() });
   }
 
   scrollToActiveSong(): void {
