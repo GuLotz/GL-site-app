@@ -21,6 +21,7 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 })
 
 export class musicComponent implements OnInit, AfterViewInit {
+
   @ViewChild('audioPlayer', { static: true }) myPlayer;
 
   sliderValue: number;
@@ -67,7 +68,7 @@ export class musicComponent implements OnInit, AfterViewInit {
         this.dataSource.sort = this.sort;
         this.dataSource.connect().subscribe(d => this.renderedData = d);
     })
-    console.log("Called updateSongList");
+    //console.log("Called updateSongList");
   }
 
   async updateSliderValue() {
@@ -106,7 +107,7 @@ export class musicComponent implements OnInit, AfterViewInit {
     if (this.playMode === 'playing') {
       this.playMode = 'pausing';
       this.myPlayer.nativeElement.pause();
-      console.log('Button Action: pause');
+      //console.log('Button Action: pause');
     }
     else {
       if (this.playMode === 'pausing') {
@@ -114,11 +115,11 @@ export class musicComponent implements OnInit, AfterViewInit {
           this.playMode = 'playing';
           this.myPlayer.nativeElement.play();
         }).then(() => {
-          console.log('Button Action: play song number ' + this.activeSong + " : " + this.songs[this.activeSong].title);
+          //console.log('Button Action: play song number ' + this.activeSong + " : " + this.songs[this.activeSong].title);
         })
       }
       else {
-        console.log('wrong content of variable playmode:' + this.playMode);
+        //console.log('Technical Error: Wrong content of variable playmode:' + this.playMode);
       }
     }
   }
@@ -127,7 +128,7 @@ export class musicComponent implements OnInit, AfterViewInit {
     this.playMode = 'pausing';
     this.myPlayer.nativeElement.pause();
     this.myPlayer.nativeElement.currentTime = 0;
-    console.log('Button Action: stop');
+    //console.log('Button Action: stop');
   }
 
   goToPreviousSong() {
@@ -153,8 +154,9 @@ export class musicComponent implements OnInit, AfterViewInit {
       this.myPlayer.nativeElement.currentTime = 0;
     }).then(() => {
       this.myPlayer.nativeElement.play();
+      this.scrollToActiveSong()
     }).then(() => {
-      console.log('Button Action: skip back. Playing song number ' + this.activeSong);
+      //console.log('Button Action: skip back. Playing song number ' + this.activeSong);
     })
   }
 
@@ -182,27 +184,14 @@ export class musicComponent implements OnInit, AfterViewInit {
     }).then(() => {
       this.myPlayer.nativeElement.play();
     }).then(() => {
-      console.log('Button Action: skip forward. Playing song number ' + this.activeSong);
+      this.scrollToActiveSong();
+      //console.log('Button Action: skip forward. Playing song number ' + this.activeSong);
     })
   }
 
   songHasEnded() {
-    /*
-    this.updateSongList().then(() => {
-      this.playMode = 'playing';
-      this.activeSong += 1;
-      if (this.activeSong == this.songs.length) {
-        this.activeSong = 0;
-      }
-      this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
-      this.myPlayer.nativeElement.currentTime = 0;
-      this.myPlayer.nativeElement.play();
-    }).then(() => {
-      console.log('Song has ended. Progressing to next song: ' + this.activeSong);
-    })
-    */
     this.goToNextSong();
-    console.log('Song has ended. Progressing to next song: ' + this.activeSong);
+    //console.log('Song has ended. Progressing to next song: ' + this.activeSong);
   }
 
   changeSong(toSong: number) {
@@ -213,7 +202,7 @@ export class musicComponent implements OnInit, AfterViewInit {
       this.activeSongPosition = "00:00";
       this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
       this.myPlayer.nativeElement.play();
-      console.log('Song was changed: ' + this.activeSong);
+      //console.log('Song was changed: ' + this.activeSong);
     })
   }
 
@@ -292,5 +281,13 @@ export class musicComponent implements OnInit, AfterViewInit {
     console.log(e);
   }
 
+  scrollToActiveSong(): void {
+    //console.log("Tried to scroll to active song: ", this.activeSong+1);
+    const rowElement = document.getElementById(`title-` + (this.activeSong + 1));
+    //console.log("rowElement:", rowElement );
+    if (rowElement) {
+      rowElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
   
 }
