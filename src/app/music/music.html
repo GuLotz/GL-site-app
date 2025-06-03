@@ -18,7 +18,7 @@
         <button class="playerButton" (click)='goToNextSong()'>
           <mat-icon aria-hidden="false" aria-label="next" fontSet="material-icons-outlined">skip_next</mat-icon>
         </button>
-        <button class="likeButton" (click)="onLike()">
+        <button class="likeButton" (click)="onLike()" [ngClass]="userLikedActiveSong>0?'songLiked':'songNotLiked'">
           <mat-icon aria-hidden="false" aria-label="next" fontSet="material-icons-outlined">thumb_up</mat-icon>
         </button>
       </div>

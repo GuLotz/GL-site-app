@@ -31,7 +31,9 @@ export class musicComponent implements OnInit, AfterViewInit {
   songs: Array<song> = [new song(1, "74f9edf1-1229-4132-8668-27f753dac086", 'Guitar Rock', 'assets/songs/GunAudio5b.mp3', "01:53", 0),
                         new song(2, "084daa22-dd4f-42ff-9711-f6dc5db29498", 'Gritty Organ', 'assets/songs/QS8.2_018_Bandlabs.mp3', "02:24", 1)];
 
+  activeUser: string;
   activeSong: number;
+  userLikedActiveSong: number;
   activeSongDuration: string | undefined;
   activeSongPosition: string | undefined;
   sub: any;
@@ -43,6 +45,8 @@ export class musicComponent implements OnInit, AfterViewInit {
     this.activeSongDuration = undefined;
     this.sliderValue = 0;
     this.dataSource = new MatTableDataSource(this.songs);
+    this.activeUser = this.getOrCreateUserID();
+    this.userLikedSong().then((res) => this.userLikedActiveSong=res);
   }
 
   async ngOnInit() {
@@ -53,6 +57,7 @@ export class musicComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
     this.dataSource.connect().subscribe(d => this.renderedData = d);
     this.scrollToActiveSong();
+    this.userLikedSong().then((res) => this.userLikedActiveSong = res);
     //this.myPlayer.nativeElement.onended = () => this.songHasEnded();
   }
 
@@ -104,11 +109,24 @@ export class musicComponent implements OnInit, AfterViewInit {
     })
   }
 
+  userLikedSong(): Promise<number> {
+    //Gunnar: UserID: b2926076-851e-4135-bfd2-bb22e5df3e32
+    //A liked song: f7c0a85e-fa46-4309-b2ec-6a0936bf5f25
+    var result: any;
+    console.log("UserID: ", this.activeUser, " SongID: ", this.songs[this.activeSong].uuid);
+    return new Promise((resolve, reject) => {
+      fetch('assets/php/api.php?SongID=' + this.songs[this.activeSong].uuid + '&UserID=' + this.activeUser)
+        .then(res => result = res.json()).then(() => {console.log("fetched user likes: ", result); resolve(result) })
+    })
+  }
+
+
   playAudio() {
     if (this.playMode === 'playing') {
       this.playMode = 'pausing';
       this.myPlayer.nativeElement.pause();
       this.scrollToActiveSong();
+      this.userLikedSong().then((res) => this.userLikedActiveSong = res);
       //console.log('Button Action: pause');
     }
     else {
@@ -118,6 +136,7 @@ export class musicComponent implements OnInit, AfterViewInit {
           this.myPlayer.nativeElement.play();
         }).then(() => {
           this.scrollToActiveSong();
+          this.userLikedSong().then((res) => this.userLikedActiveSong = res);
           //console.log('Button Action: play song number ' + this.activeSong + " : " + this.songs[this.activeSong].title);
         })
       }
@@ -157,7 +176,8 @@ export class musicComponent implements OnInit, AfterViewInit {
       this.myPlayer.nativeElement.currentTime = 0;
     }).then(() => {
       this.myPlayer.nativeElement.play();
-      this.scrollToActiveSong()
+      this.scrollToActiveSong();
+      this.userLikedSong().then((res) => this.userLikedActiveSong = res);
     }).then(() => {
       //console.log('Button Action: skip back. Playing song number ' + this.activeSong);
     })
@@ -188,6 +208,7 @@ export class musicComponent implements OnInit, AfterViewInit {
       this.myPlayer.nativeElement.play();
     }).then(() => {
       this.scrollToActiveSong();
+      this.userLikedSong().then((res) => this.userLikedActiveSong = res);
       //console.log('Button Action: skip forward. Playing song number ' + this.activeSong);
     })
   }
@@ -205,6 +226,7 @@ export class musicComponent implements OnInit, AfterViewInit {
       this.activeSongPosition = "00:00";
       this.myPlayer.nativeElement.src = this.songs[this.activeSong].path;
       this.myPlayer.nativeElement.play();
+      this.userLikedSong().then((res) => this.userLikedActiveSong = res);
       //console.log('Song was changed: ' + this.activeSong);
     })
   }
@@ -250,24 +272,46 @@ export class musicComponent implements OnInit, AfterViewInit {
       throw "No userId available";
     }
 
-    fetch('assets/php/api.php', {
-      method: 'post',
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ 'SongID': this.songs[this.activeSong].uuid , 'UserID': userID})
-    })
-      .then((reply) => console.log(reply))
+    if (this.userLikedActiveSong == 0) {
+
+      fetch('assets/php/api.php', {
+        method: 'post',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ 'SongID': this.songs[this.activeSong].uuid, 'UserID': userID })
+      })
+        .then((reply) => console.log(reply))
+        .then(() => this.userLikedActiveSong = 1);
+    } else {
+      fetch('assets/php/api.php', {
+        method: 'delete',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ 'SongID': this.songs[this.activeSong].uuid, 'UserID': userID })
+      })
+        .then((reply) => console.log(reply)).then(()=>this.userLikedActiveSong=0)
+    }
   }
 
+
+
+/*
+  userLikedSong(): boolean {
+    return false
+  }
+*/
   getOrCreateUserID(): null | string {
     if (typeof (Storage) !== "undefined") {
       const storedUser = localStorage.getItem("UserID");
       if (storedUser == null) {
         const newlyGeneratedUserId = uuid();
         localStorage.setItem("UserID", newlyGeneratedUserId);
+        console.log("UserID generated: ", newlyGeneratedUserId);
         return localStorage.getItem("UserID");
       }
+      console.log("Recognised user: ", storedUser);
       return storedUser
     } else {
       return null

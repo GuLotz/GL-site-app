@@ -8,6 +8,15 @@ $input = json_decode(file_get_contents('php://input'), true);
 
 switch ($method) {
     case 'GET':
+      if (isset($_GET['UserID'])) {
+        if (isset($_GET['SongID'])) {
+            $SongID = $_GET['SongID'];
+            $UserID = $_GET['UserID'];
+            $result = $conn->execute_query("SELECT COUNT(*) FROM userlikes WHERE SongID=? AND UserID=?;", [$SongID, $UserID]);
+            $data = $result->fetch_assoc();
+            echo json_encode($data['COUNT(*)']);
+        } 
+      } else{
         if (isset($_GET['SongID'])) {
             $SongID = $_GET['SongID'];
             $result = $conn->execute_query("SELECT COUNT(*) FROM userlikes WHERE SongID=?;", [$SongID]);
@@ -17,7 +26,8 @@ switch ($method) {
             $result = 0;
             echo json_encode($result);
         }
-        break;
+      }
+      break;     
 
     case 'POST':
         error_log(print_r($input,true));
@@ -38,11 +48,10 @@ switch ($method) {
         #echo json_encode(["message" => "Like added successfully"]);
         break;
 
-    # case 'DELETE':
-        # DELETE FROM userlikes WHERE SongID='1' 
-        # AND UserID='1' 
-        # ORDER BY SongID
-        # LIMIT 1;
+    case 'DELETE':
+        $SongID = $input['SongID'];
+        $UserID = $input['UserID'];
+        $result = $conn->execute_query("DELETE FROM userlikes WHERE SongID=? AND UserID=?;", [$SongID, $UserID]);     
 
     default:
         echo json_encode(["message" => "Invalid request method"]);
